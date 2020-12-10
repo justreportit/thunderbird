@@ -1,0 +1,39 @@
+{
+    "manifest_version": 2,
+    "name": "Just Report It",
+    "description": "An easy way to report spam directly to the registrar!",
+    "version": "0.1",
+    "author": "Nicolas Provencher",
+    "applications": {
+        "gecko": {
+            "id": "thunderbird@justreport.it",
+            "strict_min_version": "78.0",
+            "strict_max_version": "78.*"
+        }
+    },
+    "background": {
+        "scripts": [
+          "scripts/background.js"
+        ]
+      },
+    "icons": {
+        "64": "images/spam.png",
+        "32": "images/spam-32px.png",
+        "16": "images/spam-16px.png"
+    },
+    "message_display_action": {
+        "default_popup": "popup.html",
+        "default_title": "Report it",
+        "default_icon": "images/spam-32px.png"
+    },
+    "options_ui": {
+      "page": "options/options.html",
+      "open_in_tab": false,
+      "browser_style": true
+    },
+    "permissions": [
+        "messagesMove",
+        "messagesRead",
+        "accountsRead"
+    ]
+}
