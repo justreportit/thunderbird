@@ -1,0 +1,1 @@
+browser.messageDisplayAction.setPopup({'popup':null});
