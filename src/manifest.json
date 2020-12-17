@@ -6,9 +6,8 @@
     "author": "Nicolas Provencher",
     "applications": {
         "gecko": {
-            "id": "thunderbird@justreport.it",
-            "strict_min_version": "78.0",
-            "strict_max_version": "78.*"
+            "id": "admin@justreport.it",
+            "strict_min_version": "78.0"
         }
     },
     "background": {
@@ -22,18 +21,13 @@
         "16": "images/spam-16px.png"
     },
     "message_display_action": {
-        "default_popup": "popup.html",
         "default_title": "Report it",
         "default_icon": "images/spam-32px.png"
-    },
-    "options_ui": {
-      "page": "options/options.html",
-      "open_in_tab": false,
-      "browser_style": true
     },
     "permissions": [
         "messagesMove",
         "messagesRead",
-        "accountsRead"
+        "accountsRead",
+        "storage"
     ]
 }
