@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title class="i18n_options_title">Just Report It Settings</title>
+		<link type="text/css" href="css/jquery-ui.css" rel="stylesheet">
+		<link type="text/css" href="css/jquery-ui_002.css" rel="stylesheet">
+		<link type="text/css" href="css/jquery-ui-1.css" rel="stylesheet">
+		<link type="text/css" href="css/options-layout.css" rel="stylesheet">
+		<link type="text/css" href="css/bootstrap.min.css" rel="stylesheet">
+	</head>
+	<body class="options">
+		<div id="tabs" class="ui-tabs ui-corner-all ui-widget ui-widget-content">
+            <ul role="tablist" class="ui-tabs-nav ui-corner-all ui-helper-reset ui-helper-clearfix ui-widget-header">
+                <li id="1" role="tab" class="ui-tabs-tab ui-corner-top ui-state-default ui-tab ui-state-active"><a data-toggle="tab" href="#menu1" class="ui-tabs-anchor"><span class="i18n_options_general_settings">WHOIS</span></a></li>
+                <li id="2" role="tab" class="ui-tabs-tab ui-corner-top ui-state-default ui-tab"><a data-toggle="tab" href="#menu2" class="ui-tabs-anchor"><span class="i18n_disabled_sites">Custom Lookup Server</span></a></li>
+            </ul>
+		  <div class="tab-content">
+			<div id="menu1" class="tab-pane fade in active">
+                <h3>WHOIS URL Selection</h3>
+                <p>Select the default WHOIS webpage to load up during a failed lookup with the Just Report It API.</p>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="whois" id="whois1" value="1">
+                    <label class="form-check-label" for="2">
+                      whois.com
+                    </label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="whois" id="whois2" value="2">
+                    <label class="form-check-label" for="2">
+                      who.is
+                    </label>
+                </div>
+			</div>
+			<div id="menu2" class="tab-pane fade">
+			    <h3>Custom Abuse Email Lookup Server</h3>
+                <p>Set a custom abuse email lookup server instead of using the official Just Report It API.</p>
+                <div class="form-group">
+                    <label for="serverURL">Server URL:</label>
+                    <input type="text" class="form-control" id="serverURL" placeholder="Server URL">
+                    <small id="serverURLHelp" class="form-text text-muted">Example: https://api.justreport.it/lookup/</small>
+                </div>
+                <div class="form-group">
+                    <label for="apiKey">API Key:</label>
+                    <input type="text" class="form-control" id="apiKey" placeholder="API Key">
+                    <small id="apiKeyHelp" class="form-text text-muted">Example: 123456789</small>
+                </div>
+                <button id="submit" type="submit" class="btn btn-primary">Submit</button>
+                <button id="reset" type="submit" class="btn btn-primary">Reset</button>
+			</div>
+		  </div>
+		</div>
+		<script src="js/jquery.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <script src="js/options.js"></script>
+	</body>
+</html>
