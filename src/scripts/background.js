@@ -1,24 +1,50 @@
+/* Initialize settings */
+browser.storage.local.get("whois").then((item) => {if (Object.entries(item).length==0){browser.storage.local.set({"whois":"https://whois.com/whois/"})}})
+browser.storage.local.get("server").then((item) => {if (Object.entries(item).length==0){browser.storage.local.set({"server":"https://api.justreport.it/lookup/"})}})
+browser.storage.local.get("api-key").then((item) => {if (Object.entries(item).length==0){browser.storage.local.set({"api-key":"API-KEY"})}})
+
 browser.messageDisplayAction.onClicked.addListener((tab) =>{
   browser.messageDisplay.getDisplayedMessage(tab.id).then((message) => {
-    var spamDomain = extractDomain(message.author);
-    getAbuseEmail(spamDomain).then((response) => {
-      if (response.status == "success"){
-        var abuseEmail = response.data.email;
-        browser.messages.getRaw(message.id).then((raw) => 
-        browser.compose.beginNew({to: abuseEmail,
-                                  subject: "Spam Abuse from: " + spamDomain,
-                                  plainTextBody: getBody(spamDomain, raw)
-            })
-        );
-        }
-      else {
-        browser.messageDisplayAction.setPopup({'popup':'error.html'});
-      }
-    }).catch((error) => {
-      browser.messageDisplayAction.setPopup({'popup':'error.html'});
-    })
+    browser.messages.getRaw(message.id).then((raw) => {
+      var spamDomain = extractDomain(message.author);
+      getAbuseEmail(spamDomain).then((response) => {
+        response().then((serverResponse) => {
+          if (serverResponse.status == "success"){
+            composeEmail(serverResponse.data.email, spamDomain, raw)
+          }
+          else {
+            composeEmail("", spamDomain, raw).then(() => {
+              createPopup(spamDomain).then((popup) => popup());
+            });
+          }
+        })
+      })
+    });
   });
 })
+
+async function composeEmail(to, domain, raw){
+  await browser.compose.beginNew({to: to,
+    subject: "Spam Abuse from: " + domain,
+    plainTextBody: getBody(domain, raw)
+  });
+}
+
+function createPopup(domain){
+  return browser.storage.local.get("whois").then((item) => async function(){
+    var window = await messenger.windows.create({
+      url: item.whois + domain,
+      type: "popup"
+    });
+    await setFocused(window);
+  });
+}
+
+async function setFocused(window){
+  await messenger.windows.update(window.id, {
+    focused: true
+  });
+}
 
 function getBody(spamDomain, rawSpam){
   return `To whom it may concern, \n
@@ -28,16 +54,17 @@ function getBody(spamDomain, rawSpam){
           You will find the raw spam email below: \n
           ${rawSpam}`;
 }
+
 function extractDomain(author){
   return author.split("@")[1].split(">")[0];
 }
 
-async function getAbuseEmail(domain)
-{
-    var url = "https://api.justreport.it/lookup/" + domain;
+function getAbuseEmail(domain){
+  return browser.storage.local.get("server").then((item) => async function(){
+    var url = item.server + domain;
     var headers = {
       "Content-Type": "application/json",
-      "x-api-key": "API_KEY"
+      "x-api-key": "API-KEY"
     }
     var fetchInfo = {
         mode: "cors",
@@ -46,4 +73,5 @@ async function getAbuseEmail(domain)
     };
     var response = await fetch(url, fetchInfo);
     return await response.json();
+  });
 }
