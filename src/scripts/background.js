@@ -49,7 +49,7 @@ async function setFocused(window){
 function getBody(spamDomain, rawSpam){
   return `To whom it may concern, \n
           I am writing to you today to report the following domain: ${spamDomain}. \n
-          This domain is sending me unsolocited spam emails. \n
+          This domain is sending me unsolicited spam emails. \n
           Please take appropriate measures to avoid future abuse from this user. \n
           You will find the raw spam email below: \n
           ${rawSpam}`;
