@@ -56,7 +56,7 @@ function getBody(spamDomain, rawSpam){
 }
 
 function extractDomain(author){
-  return author.split("@")[1].split(">")[0];
+  return author.split("<")[1].split(">")[0].split("@")[1];
 }
 
 function getAbuseEmail(domain){
