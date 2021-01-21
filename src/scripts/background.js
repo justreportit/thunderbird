@@ -6,19 +6,17 @@ browser.storage.local.get("api-key").then((item) => {if (Object.entries(item).le
 browser.messageDisplayAction.onClicked.addListener((tab) =>{
   browser.messageDisplay.getDisplayedMessage(tab.id).then((message) => {
     browser.messages.getRaw(message.id).then((raw) => {
-      var spamDomain = extractDomain(message.author);
-      getAbuseEmail(spamDomain).then((response) => {
-        response().then((serverResponse) => {
-          if (serverResponse.status == "success"){
-            composeEmail(serverResponse.data.email, spamDomain, raw)
-          }
-          else {
-            composeEmail("", spamDomain, raw).then(() => {
-              createPopup(spamDomain).then((popup) => popup());
-            });
-          }
-        })
-      })
+      var spamDomain = extractSpamDomain(message.author);
+      getAbuseEmail(spamDomain).then((x) => x().then((y) => y().then((response) => {
+        if (response.status == "success"){
+          composeEmail(response.data.email, spamDomain, raw)
+        }
+        else {
+          composeEmail("", spamDomain, raw).then(() => {
+            createPopup(spamDomain).then((popup) => popup());
+          });
+        }
+      })));
     });
   });
 })
@@ -55,23 +53,28 @@ function getBody(spamDomain, rawSpam){
           ${rawSpam}`;
 }
 
-function extractDomain(author){
-  return author.split("@")[1].split(">")[0];
+function extractSpamDomain(author){
+  if (author.includes("<"))
+    return author.split("<")[1].split(">")[0].split("@")[1];
+  else
+    return author.split("@")[1];
 }
 
 function getAbuseEmail(domain){
-  return browser.storage.local.get("server").then((item) => async function(){
-    var url = item.server + domain;
-    var headers = {
-      "Content-Type": "application/json",
-      "x-api-key": "API-KEY"
-    }
-    var fetchInfo = {
-        mode: "cors",
-        method: "GET",
-        headers: headers
-    };
-    var response = await fetch(url, fetchInfo);
-    return await response.json();
+  return browser.storage.local.get("server").then((server) => async function(){
+    return await browser.storage.local.get("api-key").then((key) => async function(){
+      var url = server["server"] + domain;
+      var headers = {
+        "Content-Type": "application/json",
+        "x-api-key": key["api-key"]
+      }
+      var fetchInfo = {
+          mode: "cors",
+          method: "GET",
+          headers: headers
+      };
+      var response = await fetch(url, fetchInfo);
+      return await response.json();
+      })
   });
 }
