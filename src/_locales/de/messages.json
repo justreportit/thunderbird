@@ -1,0 +1,62 @@
+{
+    "background.subject": {
+        "message": "Spammisbruik van: ",
+        "description": "abuse report subject"
+    },
+    "background.body.1": {
+        "message": "Voor wie het aangaat, \n Ik schrijf u vandaag om het volgende domein te melden:",
+        "description": "abuse report body 1"
+    },
+    "background.body.2": {
+        "message": "Dit domein stuurt mij ongevraagde spam-e-mails. \nNeem passende maatregelen om toekomstig misbruik door deze gebruiker te voorkomen. \n U vindt de onbewerkte spam-e-mail hieronder: \n",
+        "description": "abuse report body 2"
+    },
+    "options.menu1.title": {
+        "message": "WHOIS URL Selectie",
+        "description": "whois selection title"
+    },
+    "options.menu1.description": {
+        "message": "Selecteer de standaard WHOIS webpagina die moet worden geladen tijdens een mislukte zoekopdracht met de Just Report It API.",
+        "description": "whois selection description"
+    },
+    "options.menu2.title": {
+        "message": "Aangepaste server voor het opzoeken van e-mailberichten",
+        "description": "lookup server title"
+    },
+    "options.menu2.description": {
+        "message": "Stel een aangepaste server voor het opzoeken van e-mails in in plaats van de officiële Just Report It API te gebruiken.",
+        "description": "lookup server description"
+    },
+    "options.menu2.label1": {
+        "message": "Server URL:",
+        "description": "lookup server label"
+    },
+    "options.menu2.serverURL": {
+        "message": "Server URL",
+        "description": "lookup server placeholder"
+    },
+    "options.menu2.serverURLHelp": {
+        "message": "Voorbeeld: https://api.justreport.it/lookup/",
+        "description": "lookup server example"
+    },
+    "options.menu2.label2": {
+        "message": "API Sleutel:",
+        "description": "api key label"
+    },
+    "options.menu2.apiKey": {
+        "message": "API Sleutel",
+        "description": "api key placeholder"
+    },
+    "options.menu2.apiKeyHelp": {
+        "message": "Voorbeeld: 123456789",
+        "description": "api key example"
+    },
+    "options.menu2.submit": {
+        "message": "Verzenden",
+        "description": "submit button"
+    },
+    "options.menu2.reset": {
+        "message": "Opnieuw Zetten",
+        "description": "reset button"
+    }
+}

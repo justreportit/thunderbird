@@ -1,0 +1,62 @@
+{
+    "background.subject": {
+        "message": "スパムの悪用：",
+        "description": "abuse report subject"
+    },
+    "background.body.1": {
+        "message": "関係者の皆様、\n 本日、次のドメインについて報告するためにご連絡いたします。",
+        "description": "abuse report body 1"
+    },
+    "background.body.2": {
+        "message": "このドメインは私に迷惑なスパムメールを送っています。 \n このユーザーによる今後の悪用を防ぐために適切な措置を講じてください。 \n 以下に生のスパムメールがあります：\n",
+        "description": "abuse report body 2"
+    },
+    "options.menu1.title": {
+        "message": "WHOIS URL 選択",
+        "description": "whois selection title"
+    },
+    "options.menu1.description": {
+        "message": "Just Report It APIを使用してルックアップに失敗したときにロードする、デフォルトのWHOISWebページを選択します。",
+        "description": "whois selection description"
+    },
+    "options.menu2.title": {
+        "message": "カスタム乱用メールルックアップサーバー",
+        "description": "lookup server title"
+    },
+    "options.menu2.description": {
+        "message": "公式のJustReport It APIを使用する代わりに、カスタムの不正使用メール検索サーバーを設定します。",
+        "description": "lookup server description"
+    },
+    "options.menu2.label1": {
+        "message": "サーバーURL",
+        "description": "lookup server label"
+    },
+    "options.menu2.serverURL": {
+        "message": "サーバーURL",
+        "description": "lookup server placeholder"
+    },
+    "options.menu2.serverURLHelp": {
+        "message": "例: https://api.justreport.it/lookup/",
+        "description": "lookup server example"
+    },
+    "options.menu2.label2": {
+        "message": "API キー:",
+        "description": "api key label"
+    },
+    "options.menu2.apiKey": {
+        "message": "API キー",
+        "description": "api key placeholder"
+    },
+    "options.menu2.apiKeyHelp": {
+        "message": "例: 123456789",
+        "description": "api key example"
+    },
+    "options.menu2.submit": {
+        "message": "参加する",
+        "description": "submit button"
+    },
+    "options.menu2.reset": {
+        "message": "リセット",
+        "description": "reset button"
+    }
+}

@@ -23,7 +23,7 @@ browser.messageDisplayAction.onClicked.addListener((tab) =>{
 
 async function composeEmail(to, domain, raw){
   await browser.compose.beginNew({to: to,
-    subject: "Spam Abuse from: " + domain,
+    subject: browser.i18n.getMessage("background.subject") + domain,
     plainTextBody: getBody(domain, raw)
   });
 }
@@ -45,12 +45,8 @@ async function setFocused(window){
 }
 
 function getBody(spamDomain, rawSpam){
-  return `To whom it may concern, \n
-          I am writing to you today to report the following domain: ${spamDomain}. \n
-          This domain is sending me unsolicited spam emails. \n
-          Please take appropriate measures to avoid future abuse from this user. \n
-          You will find the raw spam email below: \n
-          ${rawSpam}`;
+  return browser.i18n.getMessage("background.body.1") + spamDomain + ".\n" +
+          browser.i18n.getMessage("background.body.2") + rawSpam
 }
 
 function extractSpamDomain(author){

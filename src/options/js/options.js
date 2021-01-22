@@ -1,3 +1,19 @@
+// Locales setup
+$("#menu1 #title").html(browser.i18n.getMessage("options.menu1.title"));
+$("#menu1 #description").html(browser.i18n.getMessage("options.menu1.description"));
+
+$("#menu2 #title").html(browser.i18n.getMessage("options.menu2.title"));
+$("#menu2 #description").html(browser.i18n.getMessage("options.menu2.description"));
+$("#menu2 #label1").html(browser.i18n.getMessage("options.menu2.label1"));
+$("#menu2 #serverURL").attr("placeholder", browser.i18n.getMessage("options.menu2.serverURL"));
+$("#menu2 #serverURLHelp").html(browser.i18n.getMessage("options.menu2.serverURLHelp"));
+$("#menu2 #label2").html(browser.i18n.getMessage("options.menu2.label2"));
+$("#menu2 #apiKey").attr("placeholder", browser.i18n.getMessage("options.menu2.apiKey"));
+$("#menu2 #apiKeyHelp").html(browser.i18n.getMessage("options.menu2.apiKeyHelp"));
+$("#menu2 #submit").html(browser.i18n.getMessage("options.menu2.submit"));
+$("#menu2 #reset").html(browser.i18n.getMessage("options.menu2.reset"));
+
+// Main Interface
 $("li").on("click", function(){
   $("li").removeClass("ui-state-active");
   $("#" + this.id).addClass("ui-state-active");
