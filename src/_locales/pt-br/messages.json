@@ -1,0 +1,62 @@
+{
+    "background.subject": {
+        "message": "Abuso de spam de:",
+        "description": "abuse report subject"
+    },
+    "background.body.1": {
+        "message": "A quem possa interessar, \n Estou escrevendo para você hoje para relatar o seguinte domínio:",
+        "description": "abuse report body 1"
+    },
+    "background.body.2": {
+        "message": "Este domínio está me enviando e-mails de spam não solicitados. \n Por favor, tome as medidas adequadas para evitar abusos futuros por parte deste usuário. \n Você encontrará o e-mail de spam bruto abaixo: \n",
+        "description": "abuse report body 2"
+    },
+    "options.menu1.title": {
+        "message": "Seleção de URL WHOIS",
+        "description": "whois selection title"
+    },
+    "options.menu1.description": {
+        "message": "Selecione a página da web WHOIS padrão para carregar durante uma pesquisa com falha com a API Just Report It.",
+        "description": "whois selection description"
+    },
+    "options.menu2.title": {
+        "message": "Servidor de pesquisa de e-mail de abuso personalizado",
+        "description": "lookup server title"
+    },
+    "options.menu2.description": {
+        "message": "Defina um servidor de pesquisa de email de abuso personalizado em vez de usar a API oficial Just Report It.",
+        "description": "lookup server description"
+    },
+    "options.menu2.label1": {
+        "message": "URL do servidor:",
+        "description": "lookup server label"
+    },
+    "options.menu2.serverURL": {
+        "message": "URL do servidor",
+        "description": "lookup server placeholder"
+    },
+    "options.menu2.serverURLHelp": {
+        "message": "Exemplo: https://api.justreport.it/lookup/",
+        "description": "lookup server example"
+    },
+    "options.menu2.label2": {
+        "message": "Chave API:",
+        "description": "api key label"
+    },
+    "options.menu2.apiKey": {
+        "message": "Chave API",
+        "description": "api key placeholder"
+    },
+    "options.menu2.apiKeyHelp": {
+        "message": "Exemplo: 123456789",
+        "description": "api key example"
+    },
+    "options.menu2.submit": {
+        "message": "Enviar",
+        "description": "submit button"
+    },
+    "options.menu2.reset": {
+        "message": "Redefinir",
+        "description": "reset button"
+    }
+}

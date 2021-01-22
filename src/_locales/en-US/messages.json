@@ -1,0 +1,62 @@
+{
+    "background.subject": {
+        "message": "Spam Abuse from: ",
+        "description": "abuse report subject"
+    },
+    "background.body.1": {
+        "message": "To whom it may concern, \n I am writing to you today to report the following domain: ",
+        "description": "abuse report body 1"
+    },
+    "background.body.2": {
+        "message": "This domain is sending me unsolicited spam emails. \nPlease take appropriate measures to avoid future abuse from this user. \n You will find the raw spam email below:\n",
+        "description": "abuse report body 2"
+    },
+    "options.menu1.title": {
+        "message": "WHOIS URL Selection",
+        "description": "whois selection title"
+    },
+    "options.menu1.description": {
+        "message": "Select the default WHOIS webpage to load up during a failed lookup with the Just Report It API.",
+        "description": "whois selection description"
+    },
+    "options.menu2.title": {
+        "message": "Custom Abuse Email Lookup Server",
+        "description": "lookup server title"
+    },
+    "options.menu2.description": {
+        "message": "Set a custom abuse email lookup server instead of using the official Just Report It API.",
+        "description": "lookup server description"
+    },
+    "options.menu2.label1": {
+        "message": "Server URL:",
+        "description": "lookup server label"
+    },
+    "options.menu2.serverURL": {
+        "message": "Server URL",
+        "description": "lookup server placeholder"
+    },
+    "options.menu2.serverURLHelp": {
+        "message": "Example: https://api.justreport.it/lookup/",
+        "description": "lookup server example"
+    },
+    "options.menu2.label2": {
+        "message": "API Key:",
+        "description": "api key label"
+    },
+    "options.menu2.apiKey": {
+        "message": "API Key",
+        "description": "api key placeholder"
+    },
+    "options.menu2.apiKeyHelp": {
+        "message": "Example: 123456789",
+        "description": "api key example"
+    },
+    "options.menu2.submit": {
+        "message": "Submit",
+        "description": "submit button"
+    },
+    "options.menu2.reset": {
+        "message": "Reset",
+        "description": "reset button"
+    }
+}

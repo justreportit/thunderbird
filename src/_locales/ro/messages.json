@@ -1,0 +1,62 @@
+{
+    "background.subject": {
+        "message": "Abuz de spam de la: ",
+        "description": "abuse report subject"
+    },
+    "background.body.1": {
+        "message": "Cui îi poate interesa, \n Vă scriu astăzi pentru a raporta următorul domeniu:",
+        "description": "abuse report body 1"
+    },
+    "background.body.2": {
+        "message": "Acest domeniu îmi trimite e-mailuri nesolicitate de spam. \n Vă rugăm să luați măsurile adecvate pentru a evita abuzurile viitoare din partea acestui utilizator. \n Veți găsi mai jos e-mailul brut de spam: \n",
+        "description": "abuse report body 2"
+    },
+    "options.menu1.title": {
+        "message": "Selecția URL WHOIS",
+        "description": "whois selection title"
+    },
+    "options.menu1.description": {
+        "message": "Selectați pagina web implicită WHOIS pentru încărcare în timpul unei căutări nereușite cu API-ul Just Report It.",
+        "description": "whois selection description"
+    },
+    "options.menu2.title": {
+        "message": "Server de căutare a e-mailurilor cu abuz personalizat",
+        "description": "lookup server title"
+    },
+    "options.menu2.description": {
+        "message": "Set a custom abuse email lookup server instead of using the official Just Report It API.",
+        "description": "lookup server description"
+    },
+    "options.menu2.label1": {
+        "message": "Adresa URL a serverului:",
+        "description": "lookup server label"
+    },
+    "options.menu2.serverURL": {
+        "message": "Adresa URL a serverului",
+        "description": "lookup server placeholder"
+    },
+    "options.menu2.serverURLHelp": {
+        "message": "Exemplu: https://api.justreport.it/lookup/",
+        "description": "lookup server example"
+    },
+    "options.menu2.label2": {
+        "message": "Cheie API:",
+        "description": "api key label"
+    },
+    "options.menu2.apiKey": {
+        "message": "Cheie API",
+        "description": "api key placeholder"
+    },
+    "options.menu2.apiKeyHelp": {
+        "message": "Exemplu: 123456789",
+        "description": "api key example"
+    },
+    "options.menu2.submit": {
+        "message": "Trimite",
+        "description": "submit button"
+    },
+    "options.menu2.reset": {
+        "message": "Resetați",
+        "description": "reset button"
+    }
+}

@@ -16,36 +16,36 @@
             </ul>
 		  <div class="tab-content">
 			<div id="menu1" class="tab-pane fade in active">
-                <h3>WHOIS URL Selection</h3>
-                <p>Select the default WHOIS webpage to load up during a failed lookup with the Just Report It API.</p>
-                <div class="form-check">
-                    <input class="form-check-input" type="radio" name="whois" id="whois1" value="1">
-                    <label class="form-check-label" for="2">
-                      whois.com
-                    </label>
-                  </div>
-                  <div class="form-check">
-                    <input class="form-check-input" type="radio" name="whois" id="whois2" value="2">
-                    <label class="form-check-label" for="2">
-                      who.is
-                    </label>
-                </div>
+        <h3 id="title">WHOIS URL Selection</h3>
+        <p id="description">Select the default WHOIS webpage to load up during a failed lookup with the Just Report It API.</p>
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="whois" id="whois1" value="1">
+            <label class="form-check-label" for="2">
+              whois.com
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="whois" id="whois2" value="2">
+            <label class="form-check-label" for="2">
+              who.is
+            </label>
+        </div>
 			</div>
 			<div id="menu2" class="tab-pane fade">
-			    <h3>Custom Abuse Email Lookup Server</h3>
-                <p>Set a custom abuse email lookup server instead of using the official Just Report It API.</p>
-                <div class="form-group">
-                    <label for="serverURL">Server URL:</label>
-                    <input type="text" class="form-control" id="serverURL" placeholder="Server URL">
-                    <small id="serverURLHelp" class="form-text text-muted">Example: https://api.justreport.it/lookup/</small>
-                </div>
-                <div class="form-group">
-                    <label for="apiKey">API Key:</label>
-                    <input type="text" class="form-control" id="apiKey" placeholder="API Key">
-                    <small id="apiKeyHelp" class="form-text text-muted">Example: 123456789</small>
-                </div>
-                <button id="submit" type="submit" class="btn btn-primary">Submit</button>
-                <button id="reset" type="submit" class="btn btn-primary">Reset</button>
+        <h3 id="title">Custom Abuse Email Lookup Server</h3>
+        <p id="description">Set a custom abuse email lookup server instead of using the official Just Report It API.</p>
+        <div class="form-group">
+            <label id="label1" for="serverURL">Server URL:</label>
+            <input type="text" class="form-control" id="serverURL" placeholder="Server URL">
+            <small id="serverURLHelp" class="form-text text-muted">Example: https://api.justreport.it/lookup/</small>
+        </div>
+        <div class="form-group">
+            <label id="label2" for="apiKey">API Key:</label>
+            <input type="text" class="form-control" id="apiKey" placeholder="API Key">
+            <small id="apiKeyHelp" class="form-text text-muted">Example: 123456789</small>
+        </div>
+        <button id="submit" type="submit" class="btn btn-primary">Submit</button>
+        <button id="reset" type="submit" class="btn btn-primary">Reset</button>
 			</div>
 		  </div>
 		</div>
