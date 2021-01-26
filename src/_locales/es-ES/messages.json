@@ -1,62 +1,146 @@
 {
+    "general.submit": {
+        "message": "Someter",
+        "description": "submit button"
+    },
+    "general.reset": {
+        "message": "Reiniciar",
+        "description": "reset button"
+    },
+    "general.tab.1": {
+        "message": "General",
+        "description": "tab 1"
+    },
+    "general.tab.2": {
+        "message": "WHOIS",
+        "description": "tab 2"
+    },
+    "general.tab.3": {
+        "message": "Servidor de búsqueda personalizado",
+        "description": "tab 3"
+    },
+    "general.tab.4": {
+        "message": "Configuración de Spamcop",
+        "description": "tab 4"
+    },
+    "general.tab.5": {
+        "message": "Dirección de informe personalizado",
+        "description": "tab 5"
+    },
     "background.subject": {
         "message": "Abuso de spam de: ",
         "description": "abuse report subject"
     },
-    "background.body.1": {
-        "message": "A quien corresponda, \n Le escribo hoy para informarle del siguiente dominio:",
-        "description": "abuse report body 1"
-    },
-    "background.body.2": {
-        "message": "Este dominio me envía correos electrónicos no solicitados. \n Tome las medidas adecuadas para evitar futuros abusos por parte de este usuario. \n Encontrará el correo electrónico no deseado sin procesar a continuación: \n",
-        "description": "abuse report body 2"
+    "background.body": {
+        "message": "El mensaje adjunto se marcó como spam porque envía correos electrónicos no solicitados. Tome las medidas adecuadas.\n\n--",
+        "description": "abuse report body"
     },
     "options.menu1.title": {
+        "message": "Modo de configuración",
+        "description": "configuration selection title"
+    },
+    "options.menu1.description": {
+        "message": "Seleccione cómo le gustaría reportar el spam (directamente al registrador, a Spam Cop, direcciones personalizadas oa todos).",
+        "description": "configuration selection description"
+    },
+    "options.menu1.title2": {
+        "message": "Acción por defecto",
+        "description": "configuration selection title"
+    },
+    "options.menu1.description2": {
+        "message": "Seleccione qué hacer después de informar el correo electrónico.",
+        "description": "configuration selection description"
+    },
+    "options.menu1.leave": {
+        "message": "Dejalo",
+        "description": "default action 1"
+    },
+    "options.menu1.delete": {
+        "message": "Bórralo",
+        "description": "default action 2"
+    },
+    "options.menu1.move": {
+        "message": "Moverlo a la papelera",
+        "description": "default action 3"
+    },
+    "options.menu2.title": {
         "message": "Selección de URL de WHOIS",
         "description": "whois selection title"
     },
-    "options.menu1.description": {
+    "options.menu2.description": {
         "message": "Seleccione la página web de WHOIS predeterminada para cargar durante una búsqueda fallida con la API Just Report It.",
         "description": "whois selection description"
     },
-    "options.menu2.title": {
+    "options.menu3.title": {
         "message": "Servidor de búsqueda de correo electrónico de abuso personalizado",
         "description": "lookup server title"
     },
-    "options.menu2.description": {
+    "options.menu3.description": {
         "message": "Configure un servidor de búsqueda de correo electrónico de abuso personalizado en lugar de utilizar la API oficial Just Report It.",
         "description": "lookup server description"
     },
-    "options.menu2.label1": {
+    "options.menu3.label1": {
         "message": "URL del servidor:",
         "description": "lookup server label"
     },
-    "options.menu2.serverURL": {
+    "options.menu3.serverURL": {
         "message": "URL del servidor",
         "description": "lookup server placeholder"
     },
-    "options.menu2.serverURLHelp": {
+    "options.menu3.serverURLHelp": {
         "message": "Ejemplo: https://api.justreport.it/lookup/",
         "description": "lookup server example"
     },
-    "options.menu2.label2": {
+    "options.menu3.label2": {
         "message": "Clave API:",
         "description": "api key label"
     },
-    "options.menu2.apiKey": {
+    "options.menu3.apiKey": {
         "message": "Clave API",
         "description": "api key placeholder"
     },
-    "options.menu2.apiKeyHelp": {
+    "options.menu3.apiKeyHelp": {
         "message": "Ejemplo: 123456789",
         "description": "api key example"
     },
-    "options.menu2.submit": {
-        "message": "Enviar",
-        "description": "submit button"
+    "options.menu4.title": {
+        "message": "Configuración de Spamcop",
+        "description": "spamcop configuration title"
     },
-    "options.menu2.reset": {
-        "message": "Reiniciar",
-        "description": "reset button"
+    "options.menu4.description": {
+        "message": "Especifique su ID de SpamCop para permitir el envío de informes a Spam Cop. Su ID de SpamCop se puede encontrar en la dirección de correo electrónico del informe: submit.{SpamCopID}@spam.spamcop.net.",
+        "description": "spamcop configuration description"
+    },
+    "options.menu4.label1": {
+        "message": "ID de SpamCop:",
+        "description": "spamcop configuration label"
+    },
+    "options.menu4.spamcop": {
+        "message": "ID de SpamCop",
+        "description": "spamcop configuration placeholder"
+    },
+    "options.menu4.spamcopHelp": {
+        "message": "Ejemplo: bJ2asdjlka",
+        "description": "lookup server example"
+    },
+    "options.menu5.title": {
+        "message": "Dirección de informe personalizado",
+        "description": "custom address title"
+    },
+    "options.menu5.description": {
+        "message": "Especifique una o varias direcciones de correo electrónico personalizadas para enviar informes.",
+        "description": "custom address description"
+    },
+    "options.menu5.label1": {
+        "message": "Direcciones de informes personalizados:",
+        "description": "custom address label"
+    },
+    "options.menu5.customEmail": {
+        "message": "Direcciones de informes personalizados",
+        "description": "custom address placeholder"
+    },
+    "options.menu5.customEmailHelp": {
+        "message": "Ejemplo: abuse@email1.com,abuse@email2.com",
+        "description": "Custom address example"
     }
 }

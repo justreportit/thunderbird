@@ -1,62 +1,146 @@
 {
-    "background.subject": {
-        "message": "Spam z:",
-        "description": "abuse report subject"
-    },
-    "background.body.1": {
-        "message": "Do kogo to może dotyczyć, \n Piszę dziś do Ciebie, aby zgłosić następującą domenę:",
-        "description": "abuse report body 1"
-    },
-    "background.body.2": {
-        "message": "Ta domena wysyła mi niechciane e-maile ze spamem. \n Podejmij odpowiednie środki, aby uniknąć przyszłych nadużyć ze strony tego użytkownika. \n Poniżej znajdziesz nieprzetworzony e-mail ze spamem: \n",
-        "description": "abuse report body 2"
-    },
-    "options.menu1.title": {
-        "message": "Wybór adresu URL WHOIS",
-        "description": "whois selection title"
-    },
-    "options.menu1.description": {
-        "message": "Wybierz domyślną stronę internetową WHOIS, która ma zostać załadowana podczas nieudanego wyszukiwania za pomocą interfejsu API Just Report It.",
-        "description": "whois selection description"
-    },
-    "options.menu2.title": {
-        "message": "Niestandardowy serwer wyszukiwania e-maili o nadużyciach",
-        "description": "lookup server title"
-    },
-    "options.menu2.description": {
-        "message": "Ustaw niestandardowy serwer wyszukiwania e-maili nadużyć zamiast korzystać z oficjalnego interfejsu API Just Report It.",
-        "description": "lookup server description"
-    },
-    "options.menu2.label1": {
-        "message": "URL serwera:",
-        "description": "lookup server label"
-    },
-    "options.menu2.serverURL": {
-        "message": "URL serwera",
-        "description": "lookup server placeholder"
-    },
-    "options.menu2.serverURLHelp": {
-        "message": "Przykład: https://api.justreport.it/lookup/",
-        "description": "lookup server example"
-    },
-    "options.menu2.label2": {
-        "message": "API Klucz:",
-        "description": "api key label"
-    },
-    "options.menu2.apiKey": {
-        "message": "API Klucz",
-        "description": "api key placeholder"
-    },
-    "options.menu2.apiKeyHelp": {
-        "message": "Przykład: 123456789",
-        "description": "api key example"
-    },
-    "options.menu2.submit": {
+    "general.submit": {
         "message": "Zatwierdź",
         "description": "submit button"
     },
-    "options.menu2.reset": {
+    "general.reset": {
         "message": "Resetowanie",
         "description": "reset button"
+    },
+    "general.tab.1": {
+        "message": "Generał",
+        "description": "tab 1"
+    },
+    "general.tab.2": {
+        "message": "WHOIS",
+        "description": "tab 2"
+    },
+    "general.tab.3": {
+        "message": "Niestandardowy serwer wyszukiwania",
+        "description": "tab 3"
+    },
+    "general.tab.4": {
+        "message": "Konfiguracja Spamcop",
+        "description": "tab 4"
+    },
+    "general.tab.5": {
+        "message": "Adres raportu niestandardowego",
+        "description": "tab 5"
+    },
+    "background.subject": {
+        "message": "Nadużycie spamu z: ",
+        "description": "abuse report subject"
+    },
+    "background.body": {
+        "message": "Załączona wiadomość została oznaczona jako spam, ponieważ wysyła niechciane e-maile. Podejmij odpowiednie działania.\n\n--",
+        "description": "abuse report body"
+    },
+    "options.menu1.title": {
+        "message": "Tryb konfiguracji",
+        "description": "configuration selection title"
+    },
+    "options.menu1.description": {
+        "message": "Wybierz, w jaki sposób chcesz zgłosić spam (bezpośrednio do rejestratora, policjanta spamującego, niestandardowych adresów lub do wszystkich).",
+        "description": "configuration selection description"
+    },
+    "options.menu1.title2": {
+        "message": "Akcja domyślna",
+        "description": "configuration selection title"
+    },
+    "options.menu1.description2": {
+        "message": "Wybierz, co zrobić po zgłoszeniu wiadomości e-mail.",
+        "description": "configuration selection description"
+    },
+    "options.menu1.leave": {
+        "message": "Zostaw to",
+        "description": "default action 1"
+    },
+    "options.menu1.delete": {
+        "message": "Usuń to",
+        "description": "default action 2"
+    },
+    "options.menu1.move": {
+        "message": "Przenieś do kosza",
+        "description": "default action 3"
+    },
+    "options.menu2.title": {
+        "message": "Wybór adresu URL WHOIS",
+        "description": "whois selection title"
+    },
+    "options.menu2.description": {
+        "message": "Wybierz domyślną stronę internetową WHOIS, która ma zostać załadowana podczas nieudanego wyszukiwania za pomocą interfejsu API Just Report It.",
+        "description": "whois selection description"
+    },
+    "options.menu3.title": {
+        "message": "Niestandardowy serwer wyszukiwania e-maili o nadużyciach",
+        "description": "lookup server title"
+    },
+    "options.menu3.description": {
+        "message": "Ustaw niestandardowy serwer wyszukiwania e-maili nadużyć zamiast korzystać z oficjalnego interfejsu API Just Report It.",
+        "description": "lookup server description"
+    },
+    "options.menu3.label1": {
+        "message": "URL serwera:",
+        "description": "lookup server label"
+    },
+    "options.menu3.serverURL": {
+        "message": "URL serwera",
+        "description": "lookup server placeholder"
+    },
+    "options.menu3.serverURLHelp": {
+        "message": "Przykład: https://api.justreport.it/lookup/",
+        "description": "lookup server example"
+    },
+    "options.menu3.label2": {
+        "message": "Klucz API:",
+        "description": "api key label"
+    },
+    "options.menu3.apiKey": {
+        "message": "Klucz API",
+        "description": "api key placeholder"
+    },
+    "options.menu3.apiKeyHelp": {
+        "message": "Przykład: 123456789",
+        "description": "api key example"
+    },
+    "options.menu4.title": {
+        "message": "Konfiguracja Spamcop",
+        "description": "spamcop configuration title"
+    },
+    "options.menu4.description": {
+        "message": "Podaj swój identyfikator SpamCop, aby umożliwić wysyłanie raportów do Spam Cop.Twój identyfikator SpamCop można znaleźć w adresie e-mail raportu: submit.{SpamCopID}@spam.spamcop.net.",
+        "description": "spamcop configuration description"
+    },
+    "options.menu4.label1": {
+        "message": "Identyfikator SpamCop:",
+        "description": "spamcop configuration label"
+    },
+    "options.menu4.spamcop": {
+        "message": "Identyfikator SpamCop",
+        "description": "spamcop configuration placeholder"
+    },
+    "options.menu4.spamcopHelp": {
+        "message": "Przykład: bJ2asdjlka",
+        "description": "lookup server example"
+    },
+    "options.menu5.title": {
+        "message": "Adres raportu niestandardowego",
+        "description": "custom address title"
+    },
+    "options.menu5.description": {
+        "message": "Określ jeden lub wiele niestandardowych adresów e-mail, na które mają być wysyłane raporty.",
+        "description": "custom address description"
+    },
+    "options.menu5.label1": {
+        "message": "Adresy raportów niestandardowych:",
+        "description": "custom address label"
+    },
+    "options.menu5.customEmail": {
+        "message": "Adresy raportów niestandardowych",
+        "description": "custom address placeholder"
+    },
+    "options.menu5.customEmailHelp": {
+        "message": "Przykład: abuse@email1.com,abuse@email2.com",
+        "description": "Custom address example"
     }
 }

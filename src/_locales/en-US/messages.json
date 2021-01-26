@@ -1,62 +1,146 @@
 {
+    "general.submit": {
+        "message": "Submit",
+        "description": "submit button"
+    },
+    "general.reset": {
+        "message": "Reset",
+        "description": "reset button"
+    },
+    "general.tab.1": {
+        "message": "General",
+        "description": "tab 1"
+    },
+    "general.tab.2": {
+        "message": "WHOIS",
+        "description": "tab 2"
+    },
+    "general.tab.3": {
+        "message": "Custom Lookup Server",
+        "description": "tab 3"
+    },
+    "general.tab.4": {
+        "message": "Spam Cop Configuration",
+        "description": "tab 4"
+    },
+    "general.tab.5": {
+        "message": "Custom Report Address",
+        "description": "tab 5"
+    },
     "background.subject": {
         "message": "Spam Abuse from: ",
         "description": "abuse report subject"
     },
-    "background.body.1": {
-        "message": "To whom it may concern, \n I am writing to you today to report the following domain: ",
-        "description": "abuse report body 1"
-    },
-    "background.body.2": {
-        "message": "This domain is sending me unsolicited spam emails. \nPlease take appropriate measures to avoid future abuse from this user. \n You will find the raw spam email below:\n",
-        "description": "abuse report body 2"
+    "background.body": {
+        "message": "The attached message was marked as spam as it is sending unsolicited emails. Please take appropriate action.\n\n--",
+        "description": "abuse report body"
     },
     "options.menu1.title": {
+        "message": "Configuration Mode",
+        "description": "configuration selection title"
+    },
+    "options.menu1.description": {
+        "message": "Select how you would like to report spam (straight to the registrar, to Spam Cop, custom addresses, or to all).",
+        "description": "configuration selection description"
+    },
+    "options.menu1.title2": {
+        "message": "Default Action",
+        "description": "configuration selection title"
+    },
+    "options.menu1.description2": {
+        "message": "Select what to do after reporting the email.",
+        "description": "configuration selection description"
+    },
+    "options.menu1.leave": {
+        "message": "Leave It",
+        "description": "default action 1"
+    },
+    "options.menu1.delete": {
+        "message": "Delete It",
+        "description": "default action 2"
+    },
+    "options.menu1.move": {
+        "message": "Move it to trash",
+        "description": "default action 3"
+    },
+    "options.menu2.title": {
         "message": "WHOIS URL Selection",
         "description": "whois selection title"
     },
-    "options.menu1.description": {
+    "options.menu2.description": {
         "message": "Select the default WHOIS webpage to load up during a failed lookup with the Just Report It API.",
         "description": "whois selection description"
     },
-    "options.menu2.title": {
+    "options.menu3.title": {
         "message": "Custom Abuse Email Lookup Server",
         "description": "lookup server title"
     },
-    "options.menu2.description": {
+    "options.menu3.description": {
         "message": "Set a custom abuse email lookup server instead of using the official Just Report It API.",
         "description": "lookup server description"
     },
-    "options.menu2.label1": {
+    "options.menu3.label1": {
         "message": "Server URL:",
         "description": "lookup server label"
     },
-    "options.menu2.serverURL": {
+    "options.menu3.serverURL": {
         "message": "Server URL",
         "description": "lookup server placeholder"
     },
-    "options.menu2.serverURLHelp": {
+    "options.menu3.serverURLHelp": {
         "message": "Example: https://api.justreport.it/lookup/",
         "description": "lookup server example"
     },
-    "options.menu2.label2": {
+    "options.menu3.label2": {
         "message": "API Key:",
         "description": "api key label"
     },
-    "options.menu2.apiKey": {
+    "options.menu3.apiKey": {
         "message": "API Key",
         "description": "api key placeholder"
     },
-    "options.menu2.apiKeyHelp": {
+    "options.menu3.apiKeyHelp": {
         "message": "Example: 123456789",
         "description": "api key example"
     },
-    "options.menu2.submit": {
-        "message": "Submit",
-        "description": "submit button"
+    "options.menu4.title": {
+        "message": "Spam Cop Configuration",
+        "description": "spamcop configuration title"
     },
-    "options.menu2.reset": {
-        "message": "Reset",
-        "description": "reset button"
+    "options.menu4.description": {
+        "message": "Specify your SpamCop ID to enable sending reports to Spam Cop.Your SpamCop ID can be found in the report email address: submit.{SpamCopID}@spam.spamcop.net.",
+        "description": "spamcop configuration description"
+    },
+    "options.menu4.label1": {
+        "message": "SpamCop ID:",
+        "description": "spamcop configuration label"
+    },
+    "options.menu4.spamcop": {
+        "message": "SpamCop ID",
+        "description": "spamcop configuration placeholder"
+    },
+    "options.menu4.spamcopHelp": {
+        "message": "Example: bJ2asdjlka",
+        "description": "lookup server example"
+    },
+    "options.menu5.title": {
+        "message": "Custom Report Address",
+        "description": "custom address title"
+    },
+    "options.menu5.description": {
+        "message": "Specify one or multiple custom email addresses to send reports to.",
+        "description": "custom address description"
+    },
+    "options.menu5.label1": {
+        "message": "Custom report address(es):",
+        "description": "custom address label"
+    },
+    "options.menu5.customEmail": {
+        "message": "Custom report address(es)",
+        "description": "custom address placeholder"
+    },
+    "options.menu5.customEmailHelp": {
+        "message": "Example: abuse@email1.com,abuse@email2.com",
+        "description": "Custom address example"
     }
 }

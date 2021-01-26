@@ -1,9 +1,9 @@
 {
     "manifest_version": 2,
     "name": "Just Report It",
-    "description": "An easy way to report spam directly to the registrar!",
+    "description": "The proper way to report spam!",
     "default_locale": "en-US",
-    "version": "0.6",
+    "version": "1.0",
     "author": "Nicolas Provencher",
     "applications": {
         "gecko": {
