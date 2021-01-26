@@ -1,62 +1,146 @@
 {
+    "general.submit": {
+        "message": "申し出る",
+        "description": "submit button"
+    },
+    "general.reset": {
+        "message": "リセット",
+        "description": "reset button"
+    },
+    "general.tab.1": {
+        "message": "一般",
+        "description": "tab 1"
+    },
+    "general.tab.2": {
+        "message": "WHOIS",
+        "description": "tab 2"
+    },
+    "general.tab.3": {
+        "message": "カスタムルックアップサーバー",
+        "description": "tab 3"
+    },
+    "general.tab.4": {
+        "message": "スパムコップ構成",
+        "description": "tab 4"
+    },
+    "general.tab.5": {
+        "message": "カスタムレポートアドレス",
+        "description": "tab 5"
+    },
     "background.subject": {
-        "message": "スパムの悪用：",
+        "message": "スパムの悪用： ",
         "description": "abuse report subject"
     },
-    "background.body.1": {
-        "message": "関係者の皆様、\n 本日、次のドメインについて報告するためにご連絡いたします。",
-        "description": "abuse report body 1"
-    },
-    "background.body.2": {
-        "message": "このドメインは私に迷惑なスパムメールを送っています。 \n このユーザーによる今後の悪用を防ぐために適切な措置を講じてください。 \n 以下に生のスパムメールがあります：\n",
-        "description": "abuse report body 2"
+    "background.body": {
+        "message": "添付されたメッセージは、一方的な電子メールを送信しているため、スパムとしてマークされました。 適切な措置を講じてください。\n\n--",
+        "description": "abuse report body"
     },
     "options.menu1.title": {
-        "message": "WHOIS URL 選択",
-        "description": "whois selection title"
+        "message": "構成モード",
+        "description": "configuration selection title"
     },
     "options.menu1.description": {
+        "message": "スパムを報告する方法を選択します（レジストラ、スパムコップ、カスタムアドレス、またはすべてに直接）。",
+        "description": "configuration selection description"
+    },
+    "options.menu1.title2": {
+        "message": "デフォルトのアクション",
+        "description": "configuration selection title"
+    },
+    "options.menu1.description2": {
+        "message": "電子メールを報告した後に何をするかを選択します。",
+        "description": "configuration selection description"
+    },
+    "options.menu1.leave": {
+        "message": "そのままにしておきます",
+        "description": "default action 1"
+    },
+    "options.menu1.delete": {
+        "message": "消して",
+        "description": "default action 2"
+    },
+    "options.menu1.move": {
+        "message": "ゴミ箱に移動します",
+        "description": "default action 3"
+    },
+    "options.menu2.title": {
+        "message": "WHOIS-URLの選択",
+        "description": "whois selection title"
+    },
+    "options.menu2.description": {
         "message": "Just Report It APIを使用してルックアップに失敗したときにロードする、デフォルトのWHOISWebページを選択します。",
         "description": "whois selection description"
     },
-    "options.menu2.title": {
-        "message": "カスタム乱用メールルックアップサーバー",
+    "options.menu3.title": {
+        "message": "カスタム不正使用メールルックアップサーバー",
         "description": "lookup server title"
     },
-    "options.menu2.description": {
+    "options.menu3.description": {
         "message": "公式のJustReport It APIを使用する代わりに、カスタムの不正使用メール検索サーバーを設定します。",
         "description": "lookup server description"
     },
-    "options.menu2.label1": {
-        "message": "サーバーURL",
+    "options.menu3.label1": {
+        "message": "サーバーのURL:",
         "description": "lookup server label"
     },
-    "options.menu2.serverURL": {
-        "message": "サーバーURL",
+    "options.menu3.serverURL": {
+        "message": "サーバーのURL",
         "description": "lookup server placeholder"
     },
-    "options.menu2.serverURLHelp": {
+    "options.menu3.serverURLHelp": {
         "message": "例: https://api.justreport.it/lookup/",
         "description": "lookup server example"
     },
-    "options.menu2.label2": {
-        "message": "API キー:",
+    "options.menu3.label2": {
+        "message": "APIキー:",
         "description": "api key label"
     },
-    "options.menu2.apiKey": {
-        "message": "API キー",
+    "options.menu3.apiKey": {
+        "message": "APIキー",
         "description": "api key placeholder"
     },
-    "options.menu2.apiKeyHelp": {
+    "options.menu3.apiKeyHelp": {
         "message": "例: 123456789",
         "description": "api key example"
     },
-    "options.menu2.submit": {
-        "message": "参加する",
-        "description": "submit button"
+    "options.menu4.title": {
+        "message": "スパムコップ構成",
+        "description": "spamcop configuration title"
     },
-    "options.menu2.reset": {
-        "message": "リセット",
-        "description": "reset button"
+    "options.menu4.description": {
+        "message": "SpamCop IDを指定して、Spam Copへのレポートの送信を有効にします。SpamCopIDは、レポートの電子メールアドレス（submit。{SpamCopID}@spam.spamcop.net）にあります。",
+        "description": "spamcop configuration description"
+    },
+    "options.menu4.label1": {
+        "message": "スパムコップID:",
+        "description": "spamcop configuration label"
+    },
+    "options.menu4.spamcop": {
+        "message": "スパムコップID",
+        "description": "spamcop configuration placeholder"
+    },
+    "options.menu4.spamcopHelp": {
+        "message": "例: bJ2asdjlka",
+        "description": "lookup server example"
+    },
+    "options.menu5.title": {
+        "message": "カスタムレポートアドレス",
+        "description": "custom address title"
+    },
+    "options.menu5.description": {
+        "message": "レポートの送信先となる1つまたは複数のカスタム電子メールアドレスを指定します。",
+        "description": "custom address description"
+    },
+    "options.menu5.label1": {
+        "message": "カスタムレポートアドレス:",
+        "description": "custom address label"
+    },
+    "options.menu5.customEmail": {
+        "message": "カスタムレポートアドレス",
+        "description": "custom address placeholder"
+    },
+    "options.menu5.customEmailHelp": {
+        "message": "例: abuse@email1.com,abuse@email2.com",
+        "description": "Custom address example"
     }
 }

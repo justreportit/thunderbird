@@ -1,62 +1,146 @@
 {
+    "general.submit": {
+        "message": "Prezenta",
+        "description": "submit button"
+    },
+    "general.reset": {
+        "message": "Resetați",
+        "description": "reset button"
+    },
+    "general.tab.1": {
+        "message": "General",
+        "description": "tab 1"
+    },
+    "general.tab.2": {
+        "message": "WHOIS",
+        "description": "tab 2"
+    },
+    "general.tab.3": {
+        "message": "Server de căutare personalizat",
+        "description": "tab 3"
+    },
+    "general.tab.4": {
+        "message": "Configurare Spamcop",
+        "description": "tab 4"
+    },
+    "general.tab.5": {
+        "message": "Adresa raportului personalizat",
+        "description": "tab 5"
+    },
     "background.subject": {
         "message": "Abuz de spam de la: ",
         "description": "abuse report subject"
     },
-    "background.body.1": {
-        "message": "Cui îi poate interesa, \n Vă scriu astăzi pentru a raporta următorul domeniu:",
-        "description": "abuse report body 1"
-    },
-    "background.body.2": {
-        "message": "Acest domeniu îmi trimite e-mailuri nesolicitate de spam. \n Vă rugăm să luați măsurile adecvate pentru a evita abuzurile viitoare din partea acestui utilizator. \n Veți găsi mai jos e-mailul brut de spam: \n",
-        "description": "abuse report body 2"
+    "background.body": {
+        "message": "Mesajul atașat a fost marcat ca spam, deoarece trimite e-mailuri nesolicitate. Vă rugăm să luați măsurile corespunzătoare.\n\n--",
+        "description": "abuse report body"
     },
     "options.menu1.title": {
+        "message": "Mod de configurare",
+        "description": "configuration selection title"
+    },
+    "options.menu1.description": {
+        "message": "Selectați modul în care doriți să raportați spam (direct la registrator, la Spam Cop, adrese personalizate sau la toți).",
+        "description": "configuration selection description"
+    },
+    "options.menu1.title2": {
+        "message": "Acțiune implicită",
+        "description": "configuration selection title"
+    },
+    "options.menu1.description2": {
+        "message": "Selectați ce să faceți după raportarea e-mailului.",
+        "description": "configuration selection description"
+    },
+    "options.menu1.leave": {
+        "message": "Lăsați-l",
+        "description": "default action 1"
+    },
+    "options.menu1.delete": {
+        "message": "Sterge-l",
+        "description": "default action 2"
+    },
+    "options.menu1.move": {
+        "message": "Mutați-l în coșul de gunoi",
+        "description": "default action 3"
+    },
+    "options.menu2.title": {
         "message": "Selecția URL WHOIS",
         "description": "whois selection title"
     },
-    "options.menu1.description": {
+    "options.menu2.description": {
         "message": "Selectați pagina web implicită WHOIS pentru încărcare în timpul unei căutări nereușite cu API-ul Just Report It.",
         "description": "whois selection description"
     },
-    "options.menu2.title": {
+    "options.menu3.title": {
         "message": "Server de căutare a e-mailurilor cu abuz personalizat",
         "description": "lookup server title"
     },
-    "options.menu2.description": {
-        "message": "Set a custom abuse email lookup server instead of using the official Just Report It API.",
+    "options.menu3.description": {
+        "message": "Setați un server personalizat de căutare prin e-mail în loc să utilizați API-ul oficial Just Report It.",
         "description": "lookup server description"
     },
-    "options.menu2.label1": {
-        "message": "Adresa URL a serverului:",
+    "options.menu3.label1": {
+        "message": "URL server:",
         "description": "lookup server label"
     },
-    "options.menu2.serverURL": {
-        "message": "Adresa URL a serverului",
+    "options.menu3.serverURL": {
+        "message": "URL server",
         "description": "lookup server placeholder"
     },
-    "options.menu2.serverURLHelp": {
+    "options.menu3.serverURLHelp": {
         "message": "Exemplu: https://api.justreport.it/lookup/",
         "description": "lookup server example"
     },
-    "options.menu2.label2": {
+    "options.menu3.label2": {
         "message": "Cheie API:",
         "description": "api key label"
     },
-    "options.menu2.apiKey": {
+    "options.menu3.apiKey": {
         "message": "Cheie API",
         "description": "api key placeholder"
     },
-    "options.menu2.apiKeyHelp": {
+    "options.menu3.apiKeyHelp": {
         "message": "Exemplu: 123456789",
         "description": "api key example"
     },
-    "options.menu2.submit": {
-        "message": "Trimite",
-        "description": "submit button"
+    "options.menu4.title": {
+        "message": "Configurare Spamcop",
+        "description": "spamcop configuration title"
     },
-    "options.menu2.reset": {
-        "message": "Resetați",
-        "description": "reset button"
+    "options.menu4.description": {
+        "message": "Specificați ID-ul SpamCop pentru a permite trimiterea rapoartelor către Spam Cop. ID-ul dvs. SpamCop poate fi găsit în adresa de e-mail a raportului: trimiteți.",
+        "description": "spamcop configuration description"
+    },
+    "options.menu4.label1": {
+        "message": "ID-ul SpamCop:",
+        "description": "spamcop configuration label"
+    },
+    "options.menu4.spamcop": {
+        "message": "ID-ul SpamCop",
+        "description": "spamcop configuration placeholder"
+    },
+    "options.menu4.spamcopHelp": {
+        "message": "Exemplu: bJ2asdjlka",
+        "description": "lookup server example"
+    },
+    "options.menu5.title": {
+        "message": "Adresa raportului personalizat",
+        "description": "custom address title"
+    },
+    "options.menu5.description": {
+        "message": "Specificați una sau mai multe adrese de e-mail personalizate la care să trimiteți rapoarte.",
+        "description": "custom address description"
+    },
+    "options.menu5.label1": {
+        "message": "Adresa (adresele) raportului personalizat:",
+        "description": "custom address label"
+    },
+    "options.menu5.customEmail": {
+        "message": "Adresa (adresele) raportului personalizat",
+        "description": "custom address placeholder"
+    },
+    "options.menu5.customEmailHelp": {
+        "message": "Exemplu: abuse@email1.com,abuse@email2.com",
+        "description": "Custom address example"
     }
 }
