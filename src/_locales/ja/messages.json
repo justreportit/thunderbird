@@ -123,6 +123,10 @@
         "message": "例: bJ2asdjlka",
         "description": "lookup server example"
     },
+    "options.menu4.quick": {
+        "message": "クイックスパムコップを有効にする",
+        "description": "quick spamcop option"
+    },
     "options.menu5.title": {
         "message": "カスタムレポートアドレス",
         "description": "custom address title"

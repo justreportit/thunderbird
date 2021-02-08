@@ -123,6 +123,10 @@
         "message": "Exemplo: bJ2asdjlka",
         "description": "lookup server example"
     },
+    "options.menu4.quick": {
+        "message": "Ativar Quick SpamCop",
+        "description": "quick spamcop option"
+    },
     "options.menu5.title": {
         "message": "Endereço de relatório personalizado",
         "description": "custom address title"

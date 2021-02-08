@@ -72,7 +72,7 @@ async function performAction(messageId){
 
 function getSpamcopEmail(){
   return browser.storage.local.get("spamcop").then((item) => {
-      return "submit." + item.spamcop + "@spam.spamcop.net";
+      return item.spamcop;
   });
 }
 

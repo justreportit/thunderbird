@@ -123,6 +123,10 @@
         "message": "Exemplu: bJ2asdjlka",
         "description": "lookup server example"
     },
+    "options.menu4.quick": {
+        "message": "Activați SpamCop rapid",
+        "description": "quick spamcop option"
+    },
     "options.menu5.title": {
         "message": "Adresa raportului personalizat",
         "description": "custom address title"
