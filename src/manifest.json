@@ -3,7 +3,7 @@
     "name": "Just Report It",
     "description": "The proper way to report spam!",
     "default_locale": "en-US",
-    "version": "1.0",
+    "version": "1.1",
     "author": "Nicolas Provencher",
     "applications": {
         "gecko": {

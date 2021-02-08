@@ -123,6 +123,10 @@
         "message": "Voorbeeld: bJ2asdjlka",
         "description": "lookup server example"
     },
+    "options.menu4.quick": {
+        "message": "Schakel Quick SpamCop in",
+        "description": "quick spamcop option"
+    },
     "options.menu5.title": {
         "message": "Aangepast rapportadres",
         "description": "custom address title"

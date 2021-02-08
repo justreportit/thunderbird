@@ -32,6 +32,7 @@ $("#menu4 #description").html(browser.i18n.getMessage("options.menu4.description
 $("#menu4 #label1").html(browser.i18n.getMessage("options.menu4.label1"));
 $("#menu4 #spamcop").html(browser.i18n.getMessage("options.menu4.spamcop"));
 $("#menu4 #spamcopHelp").html(browser.i18n.getMessage("options.menu4.spamcopHelp"));
+$("#menu4 #quickLabel").html(browser.i18n.getMessage("options.menu4.quick"));
 $("#menu4 #submit").html(browser.i18n.getMessage("general.submit"));
 
 $("#menu5 #title").html(browser.i18n.getMessage("options.menu5.title"));
@@ -75,7 +76,12 @@ $("#menu3 #reset").on("click", function(){
 });
 
 $("#menu4 #submit").on("click", function(){
-  browser.storage.local.set({"spamcop":$("#spamcopID").val()})
+  var spamcop = "";
+  if ($("#menu4 #quick").prop('checked'))
+    spamcop = "quick." + $("#spamcopID").val() + "@spam.spamcop.net"
+  else
+    spamcop = "submit." + $("#spamcopID").val() + "@spam.spamcop.net"
+  browser.storage.local.set({"spamcop":spamcop})
 });
 
 $("#menu5 #submit").on("click", function(){
@@ -152,7 +158,7 @@ $(document).ready(function(){
       $("#apiKey").val(item["api-key"]);
   });
   browser.storage.local.get("spamcop").then((item) => {
-    $("#spamcopID").val(item.spamcop);
+    $("#spamcopID").val(item.spamcop.split(".")[1].split("@")[0]);
   });
   browser.storage.local.get("custom").then((item) => {
     var custom = "";
