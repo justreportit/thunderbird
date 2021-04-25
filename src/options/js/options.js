@@ -72,7 +72,7 @@ $("#menu3 #reset").on("click", function(){
   $("#serverURL").val("");
   $("#apiKey").val("");
   browser.storage.local.set({"server":"https://api.justreport.it/lookup/"})
-  browser.storage.local.set({"api-key":"API-KEY"})
+  browser.storage.local.set({"api-key":"DeVKFVPs3T40XYrUeQl9z5adMwopbYnY8jaAbecw"})
 });
 
 $("#menu4 #submit").on("click", function(){
@@ -154,7 +154,7 @@ $(document).ready(function(){
       $("#serverURL").val(item.server);
   });
   browser.storage.local.get("api-key").then((item) => {
-    if (item["api-key"] != "API-KEY")
+    if (item["api-key"] != "DeVKFVPs3T40XYrUeQl9z5adMwopbYnY8jaAbecw")
       $("#apiKey").val(item["api-key"]);
   });
   browser.storage.local.get("spamcop").then((item) => {

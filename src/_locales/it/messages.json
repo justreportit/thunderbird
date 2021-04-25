@@ -27,11 +27,19 @@
         "message": "Indirizzo report personalizzato",
         "description": "tab 5"
     },
-    "background.subject": {
+    "background.subject.basic": {
         "message": "Abuso di spam da: ",
         "description": "abuse report subject"
     },
-    "background.body": {
+    "background.subject.selected": {
+        "message": "Abuso di spam da",
+        "description": "abuse report subject"
+    },
+    "background.body.basic": {
+        "message": "Il messaggio allegato è stato contrassegnato come spam poiché invia e-mail non richieste. Si prega di intraprendere l'azione appropriata.\n\n--",
+        "description": "abuse report body"
+    },
+    "background.body.selected": {
         "message": "Il messaggio allegato è stato contrassegnato come spam poiché invia e-mail non richieste. Si prega di intraprendere l'azione appropriata.\n\n--",
         "description": "abuse report body"
     },

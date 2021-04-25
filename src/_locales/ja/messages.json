@@ -27,11 +27,19 @@
         "message": "カスタムレポートアドレス",
         "description": "tab 5"
     },
-    "background.subject": {
+    "background.subject.basic": {
         "message": "スパムの悪用： ",
         "description": "abuse report subject"
     },
-    "background.body": {
+    "background.subject.selected": {
+        "message": "スパムの悪用",
+        "description": "abuse report subject"
+    },
+    "background.body.basic": {
+        "message": "添付されたメッセージは、一方的な電子メールを送信しているため、スパムとしてマークされました。 適切な措置を講じてください。\n\n--",
+        "description": "abuse report body"
+    },
+    "background.body.selected": {
         "message": "添付されたメッセージは、一方的な電子メールを送信しているため、スパムとしてマークされました。 適切な措置を講じてください。\n\n--",
         "description": "abuse report body"
     },

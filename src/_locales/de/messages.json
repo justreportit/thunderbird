@@ -27,12 +27,20 @@
         "message": "Melde-Adresse",
         "description": "Anpassungen der individuellen Melde-Adresse"
     },
-    "background.subject": {
+    "background.subject.basic": {
         "message": "Spam von: ",
         "description": "Ergänzung der Betreff-Zeile als Hinweis auf die Herkunft des Spams"
     },
-    "background.body": {
-        "message": "Die angehängte Nachricht wurde als Spam markiert, da sie einen unerwünschten Inhalt enthält. Bitte ergreifen Sie entsprechende Maßnahmen.\n\n-- ",
+    "background.subject.selected": {
+        "message": "Spam",
+        "description": "Ergänzung der Betreff-Zeile als Hinweis auf die Herkunft des Spams"
+    },
+    "background.body.basic": {
+        "message": "Die angehängte Nachricht wurde als Spam markiert, da sie einen unerwünschten Inhalt enthält. Bitte ergreifen Sie entsprechende Maßnahmen.\n\n--",
+        "description": "Dieser Text wird bei der Meldung in die Nachricht selbst geschrieben"
+    },
+    "background.body.selected": {
+        "message": "Die angehängte Nachricht wurde als Spam markiert, da sie einen unerwünschten Inhalt enthält. Bitte ergreifen Sie entsprechende Maßnahmen.\n\n--",
         "description": "Dieser Text wird bei der Meldung in die Nachricht selbst geschrieben"
     },
     "options.menu1.title": {

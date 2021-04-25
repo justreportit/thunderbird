@@ -27,11 +27,19 @@
         "message": "Adres raportu niestandardowego",
         "description": "tab 5"
     },
-    "background.subject": {
+    "background.subject.basic": {
         "message": "Nadużycie spamu z: ",
         "description": "abuse report subject"
     },
-    "background.body": {
+    "background.subject.selected": {
+        "message": "Nadużycie spamu z",
+        "description": "abuse report subject"
+    },
+    "background.body.basic": {
+        "message": "Załączona wiadomość została oznaczona jako spam, ponieważ wysyła niechciane e-maile. Podejmij odpowiednie działania.\n\n--",
+        "description": "abuse report body"
+    },
+    "background.body.selected": {
         "message": "Załączona wiadomość została oznaczona jako spam, ponieważ wysyła niechciane e-maile. Podejmij odpowiednie działania.\n\n--",
         "description": "abuse report body"
     },

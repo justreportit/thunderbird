@@ -27,12 +27,20 @@
         "message": "Custom Report Address",
         "description": "tab 5"
     },
-    "background.subject": {
+    "background.subject.basic": {
         "message": "Spam Abuse from: ",
         "description": "abuse report subject"
     },
-    "background.body": {
+    "background.subject.selected": {
+        "message": "Spam Abuse Report",
+        "description": "abuse report subject"
+    },
+    "background.body.basic": {
         "message": "The attached message was marked as spam as it is sending unsolicited emails. Please take appropriate action.\n\n--",
+        "description": "abuse report body"
+    },
+    "background.body.selected": {
+        "message": "The attached messages were marked as spam as they are sending unsolicited emails. Please take appropriate action.\n\n--",
         "description": "abuse report body"
     },
     "options.menu1.title": {

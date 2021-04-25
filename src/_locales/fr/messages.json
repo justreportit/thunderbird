@@ -27,12 +27,20 @@
         "message": "Adresse du rapport personnalisé",
         "description": "tab 5"
     },
-    "background.subject": {
+    "background.subject.basic": {
         "message": "Abus de spam de: ",
         "description": "abuse report subject"
     },
-    "background.body": {
+    "background.subject.selected": {
+        "message": "Abus de spam",
+        "description": "abuse report subject"
+    },
+    "background.body.basic": {
         "message": "Le message joint a été marqué comme spam car il envoie des e-mails non sollicités. Veuillez prendre les mesures appropriées.\n\n--",
+        "description": "abuse report body"
+    },
+    "background.body.selected": {
+        "message": "Les messages joints ont été marqués comme spam car ils envoie des e-mails non sollicités. Veuillez prendre les mesures appropriées.\n\n--",
         "description": "abuse report body"
     },
     "options.menu1.title": {
