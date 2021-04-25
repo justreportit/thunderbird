@@ -1,150 +1,150 @@
 {
     "general.submit": {
-        "message": "Verzenden",
-        "description": "submit button"
+        "message": "Speichern",
+        "description": "Einstellungen speichern"
     },
     "general.reset": {
-        "message": "Opnieuw zetten",
-        "description": "reset button"
+        "message": "Zurücksetzen",
+        "description": "Änderungen zurücksetzen"
     },
     "general.tab.1": {
-        "message": "Algemeen",
-        "description": "tab 1"
+        "message": "Allgemein",
+        "description": "Allgemeine Einstellungen"
     },
     "general.tab.2": {
-        "message": "WHOIS",
-        "description": "tab 2"
+        "message": "Whois",
+        "description": "Einstellungen für Whois-Server"
     },
     "general.tab.3": {
-        "message": "Aangepaste opzoekserver",
+        "message": "Eigener Lookup-Server",
         "description": "tab 3"
     },
     "general.tab.4": {
-        "message": "Spamcop-configuratie",
-        "description": "tab 4"
+        "message": "SpamCop-Konfiguration",
+        "description": "Anpassungen der Melde-Adresse für SpamCop"
     },
     "general.tab.5": {
-        "message": "Aangepast rapportadres",
-        "description": "tab 5"
+        "message": "Melde-Adresse",
+        "description": "Anpassungen der individuellen Melde-Adresse"
     },
     "background.subject": {
-        "message": "Spammisbruik van: ",
-        "description": "abuse report subject"
+        "message": "Spam von: ",
+        "description": "Ergänzung der Betreff-Zeile als Hinweis auf die Herkunft des Spams"
     },
     "background.body": {
-        "message": "Het bijgevoegde bericht is gemarkeerd als spam omdat het ongevraagde e-mails verzendt. Onderneem passende maatregelen.\n\n--",
-        "description": "abuse report body"
+        "message": "Die angehängte Nachricht wurde als Spam markiert, da sie einen unerwünschten Inhalt enthält. Bitte ergreifen Sie entsprechende Maßnahmen.\n\n-- ",
+        "description": "Dieser Text wird bei der Meldung in die Nachricht selbst geschrieben"
     },
     "options.menu1.title": {
-        "message": "Configuratiemodus",
-        "description": "configuration selection title"
+        "message": "Melde-Adressen",
+        "description": "Überschrift für die Konfiguration, an wen Spam gemeldet werden soll"
     },
     "options.menu1.description": {
-        "message": "Selecteer hoe u spam wilt rapporteren (rechtstreeks naar de registrar, naar Spam Cop, aangepaste adressen of naar iedereen).",
-        "description": "configuration selection description"
+        "message": "Wähle aus, wie Du Spam melden möchtest (direkt an den Registrar, an SpamCop, an eine benutzerdefinierte Adresse oder an alle).",
+        "description": "Konfiguration, an wen Spam gemeldet werden soll"
     },
     "options.menu1.title2": {
-        "message": "Standaardactie",
-        "description": "configuration selection title"
+        "message": "Standard-Aktion",
+        "description": "Überschrift für die Standard-Aktion"
     },
     "options.menu1.description2": {
-        "message": "Selecteer wat u wilt doen na het melden van de e-mail.",
-        "description": "configuration selection description"
+        "message": "Wähle aus, was nach dem Melden der Nachricht geschehen soll.",
+        "description": "Auswahl der Standard-Aktion"
     },
     "options.menu1.leave": {
-        "message": "Laat het",
-        "description": "default action 1"
+        "message": "Keine Aktion",
+        "description": "Die Nachricht bleibt, wie/wo sie ist"
     },
     "options.menu1.delete": {
-        "message": "Verwijder het",
-        "description": "default action 2"
+        "message": "Nachricht löschen",
+        "description": "Die Nachricht wird direkt gelöscht"
     },
     "options.menu1.move": {
-        "message": "Verplaats het naar de prullenbak",
-        "description": "default action 3"
+        "message": "In den Papierkorb verschieben",
+        "description": "Die Nachricht wird in den Papierkorb verschoben"
     },
     "options.menu2.title": {
-        "message": "WHOIS-URL-selectie",
-        "description": "whois selection title"
+        "message": "Auswahl der Whois-URL",
+        "description": "Überschrift für die Auswahl der Whois-URL"
     },
     "options.menu2.description": {
-        "message": "Selecteer de standaard WHOIS-webpagina die moet worden geladen tijdens een mislukte zoekopdracht met de Just Report It API.",
-        "description": "whois selection description"
+        "message": "Wähle die Standard-Whois-Webseite, die bei einer fehlgeschlagenen Suche mit der JustReportIt-API geladen werden soll.",
+        "description": "Auswahl der Whois-URL"
     },
     "options.menu3.title": {
-        "message": "Aangepaste server voor het opzoeken van e-mailberichten ",
-        "description": "lookup server title"
+        "message": "Eigener Lookup-Server für Spam-Meldung",
+        "description": "Lookup-Server Titel"
     },
     "options.menu3.description": {
-        "message": "Stel een aangepaste server voor het opzoeken van e-mails in in plaats van de officiële Just Report It API te gebruiken.",
-        "description": "lookup server description"
+        "message": "Setze einen eigenen Lookup-Server für Spam-Meldungen statt die offizielle Just Report It API zu verwenden.",
+        "description": "Lookup-Server Beschreibung"
     },
     "options.menu3.label1": {
         "message": "Server-URL:",
-        "description": "lookup server label"
+        "description": "Server um ... "
     },
     "options.menu3.serverURL": {
-        "message": "Server-URL ",
-        "description": "lookup server placeholder"
+        "message": "Server-URL",
+        "description": "Platzhalter für die Eingabe des Servers"
     },
     "options.menu3.serverURLHelp": {
-        "message": "Voorbeeld: https://api.justreport.it/lookup/",
-        "description": "lookup server example"
+        "message": "Beispiel: https://api.justreport.it/lookup/",
+        "description": "Beispiel für den Lookup-Server"
     },
     "options.menu3.label2": {
-        "message": "API sleutel:",
-        "description": "api key label"
+        "message": "API-Key:",
+        "description": "Überschrift für den API-Key"
     },
     "options.menu3.apiKey": {
-        "message": "API sleutel",
-        "description": "api key placeholder"
+        "message": "API-Key",
+        "description": "Platzhalter für die Eingabe des API-Keys"
     },
     "options.menu3.apiKeyHelp": {
-        "message": "Voorbeeld: 123456789",
-        "description": "api key example"
+        "message": "Beispiel: 123456789",
+        "description": "Beispiel für den API-Key"
     },
     "options.menu4.title": {
-        "message": "Spamcop-configuratie",
-        "description": "spamcop configuration title"
+        "message": "SpamCop-Konfiguration",
+        "description": "Überschrift für die SpamCop-Konfiguration"
     },
     "options.menu4.description": {
-        "message": "Geef uw SpamCop-ID op om het verzenden van rapporten naar Spam Cop mogelijk te maken. Uw SpamCop-ID kunt u vinden in het e-mailadres voor het rapport: submit.{SpamCopID}@spam.spamcop.net.",
-        "description": "spamcop configuration description"
+        "message": "Gib Deine SpamCop-ID an, um das Senden von Berichten an SpamCop zu ermöglichen. Deine SpamCop-ID findest Du in der Berichts-Adresse: submit.{SpamCopID}@spam.spamcop.net.",
+        "description": "Erklärung der SpamCop-Konfiguration"
     },
     "options.menu4.label1": {
-        "message": "SpamCop ID:",
-        "description": "spamcop configuration label"
+        "message": "SpamCop-ID:",
+        "description": "Überschrift für die Eingabe der SpamCop-ID"
     },
     "options.menu4.spamcop": {
-        "message": "SpamCop ID",
-        "description": "spamcop configuration placeholder"
+        "message": "SpamCop-ID",
+        "description": "Platzhalter für die SpamCop-ID"
     },
     "options.menu4.spamcopHelp": {
-        "message": "Voorbeeld: bJ2asdjlka",
-        "description": "lookup server example"
+        "message": "Beispiel: bJ2asdjlka",
+        "description": "Beispiel für die SpamCop-ID"
     },
     "options.menu4.quick": {
-        "message": "Schakel Quick SpamCop in",
-        "description": "quick spamcop option"
+        "message": "Quick-SpamCop einschalten",
+        "description": "Einschalten der Option Quick-SpamCop; damit wird nur auf die Quelle, nicht aber auf den Nachrichtentext geachtet."
     },
     "options.menu5.title": {
-        "message": "Aangepast rapportadres",
-        "description": "custom address title"
+        "message": "Benutzerdefinierte Melde-Adresse",
+        "description": "Überschrift für die benutzerdefinierte Melde-Adresse"
     },
     "options.menu5.description": {
-        "message": "Geef een of meerdere aangepaste e-mailadressen op waarnaar u rapporten wilt verzenden.",
-        "description": "custom address description"
+        "message": "Gib eine oder mehrere benutzerdefinierte Adressen an, an die Berichte gesendet werden sollen.",
+        "description": "Erklärung für benutzerdefinierte Melde-Adressen"
     },
     "options.menu5.label1": {
-        "message": "Aangepast rapport adres (sen):",
-        "description": "custom address label"
+        "message": "Benutzerdefinierte Melde-Adresse(n):",
+        "description": "Titel für benutzerdefinierte Melde-Adressen"
     },
     "options.menu5.customEmail": {
-        "message": "Aangepast rapport adres (sen):",
-        "description": "custom address placeholder"
+        "message": "Benutzerdefinierte Melde-Adresse(n)",
+        "description": "Platzhalter für benutzerdefinierte Melde-Adresse(n)"
     },
     "options.menu5.customEmailHelp": {
-        "message": "Voorbeeld: abuse@email1.com,abuse@email2.com",
-        "description": "Custom address example"
+        "message": "Beispiel: abuse@email1.com,abuse@email2.com",
+        "description": "Beispiel für benutzerdefinierte Melde-Adresse(n)"
     }
 }
