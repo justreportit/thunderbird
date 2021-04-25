@@ -27,11 +27,19 @@
         "message": "Adresa raportului personalizat",
         "description": "tab 5"
     },
-    "background.subject": {
+    "background.subject.basic": {
         "message": "Abuz de spam de la: ",
         "description": "abuse report subject"
     },
-    "background.body": {
+    "background.subject.selected": {
+        "message": "Abuz de spam de la",
+        "description": "abuse report subject"
+    },
+    "background.body.basic": {
+        "message": "Mesajul atașat a fost marcat ca spam, deoarece trimite e-mailuri nesolicitate. Vă rugăm să luați măsurile corespunzătoare.\n\n--",
+        "description": "abuse report body"
+    },
+    "background.body.selected": {
         "message": "Mesajul atașat a fost marcat ca spam, deoarece trimite e-mailuri nesolicitate. Vă rugăm să luați măsurile corespunzătoare.\n\n--",
         "description": "abuse report body"
     },

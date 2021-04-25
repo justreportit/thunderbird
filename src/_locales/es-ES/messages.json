@@ -27,11 +27,19 @@
         "message": "Dirección de informe personalizado",
         "description": "tab 5"
     },
-    "background.subject": {
+    "background.subject.basic": {
         "message": "Abuso de spam de: ",
         "description": "abuse report subject"
     },
-    "background.body": {
+    "background.subject.selected": {
+        "message": "Abuso de spam",
+        "description": "abuse report subject"
+    },
+    "background.body.basic": {
+        "message": "El mensaje adjunto se marcó como spam porque envía correos electrónicos no solicitados. Tome las medidas adecuadas.\n\n--",
+        "description": "abuse report body"
+    },
+    "background.body.selected": {
         "message": "El mensaje adjunto se marcó como spam porque envía correos electrónicos no solicitados. Tome las medidas adecuadas.\n\n--",
         "description": "abuse report body"
     },
