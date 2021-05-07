@@ -93,17 +93,15 @@ function processSelectedMessage(files, messages, index){
 
 async function performAction(messageId){
   browser.storage.local.get("action").then((item) => {
-    console.log(item.action);
+    // Mark all messages as junk
+    browser.messages.update(messageId, {
+      "junk": true
+    });
     if (item.action == "move"){
       browser.messages.delete([messageId], false);
     }
     else if (item.action == "delete") {
       browser.messages.delete([messageId], true);
-    }
-    else if (item.action == "junk") {
-      browser.messages.update(messageId, {
-        "junk": true
-      });
     }
   });
 }
