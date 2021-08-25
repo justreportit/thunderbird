@@ -3,7 +3,7 @@
     "name": "Just Report It",
     "description": "The proper way to report spam!",
     "default_locale": "en-US",
-    "version": "1.2.1",
+    "version": "1.2.2",
     "author": "Nicolas Provencher",
     "applications": {
         "gecko": {
@@ -33,6 +33,7 @@
     "permissions": [
         "messagesMove",
         "messagesRead",
+        "messagesDelete",
         "accountsRead",
         "storage",
         "menus"
