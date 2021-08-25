@@ -64,8 +64,8 @@ $("#menu2 input").on("click", function(){
 });
 
 $("#menu3 #submit").on("click", function(){
-  browser.storage.local.set({"server":$("#serverURL").val()})
-  browser.storage.local.set({"api-key":$("#serverURL").val()})
+  browser.storage.local.set({"server":$("#serverURL").val().trim()})
+  browser.storage.local.set({"api-key":$("#apiKey").val().trim()})
 });
 
 $("#menu3 #reset").on("click", function(){
@@ -78,21 +78,23 @@ $("#menu3 #reset").on("click", function(){
 $("#menu4 #submit").on("click", function(){
   var spamcop = "";
   if ($("#menu4 #quick").prop('checked'))
-    spamcop = "quick." + $("#spamcopID").val() + "@spam.spamcop.net"
+    spamcop = "quick." + $("#spamcopID").val().trim() + "@spam.spamcop.net"
   else
-    spamcop = "submit." + $("#spamcopID").val() + "@spam.spamcop.net"
+    spamcop = "submit." + $("#spamcopID").val().trim() + "@spam.spamcop.net"
   browser.storage.local.set({"spamcop":spamcop})
 });
 
 $("#menu5 #submit").on("click", function(){
-  var temp = $("#customEmail").val()
+  var temp = $("#customEmail").val().trim()
   if (temp.split(",").length > 1){
     var custom = [];
     temp.split(",").forEach((element) => custom.push(element));
     browser.storage.local.set({"custom":custom})
   }
-  else
+  else if (temp != "")
     browser.storage.local.set({"custom":[temp]})
+  else
+    browser.storage.local.set({"custom":[]})
 });
 
 $(document).ready(function(){
