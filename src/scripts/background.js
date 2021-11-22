@@ -9,50 +9,53 @@ browser.storage.local.get("custom").then((item) => {if (Object.entries(item).len
 
 browser.messageDisplayAction.onClicked.addListener((tab) =>{
   browser.messageDisplay.getDisplayedMessage(tab.id).then((message) => {
-    browser.messages.getRaw(message.id).then((raw) => {
-      browser.storage.local.get("mode").then((configuration) => {
-        var spamDomain = extractSpamDomain(message.author);
-        var to = [];
-        if (configuration.mode == "registrar" || configuration.mode == "all"){
-          getAbuseEmail(spamDomain).then((x) => x().then((y) => y().then((response) => {
-            if (configuration.mode == "all"){
-              getSpamcopEmail().then((email) => {
-                getCustomEmail().then((custom) => {
-                  to.push.apply(to, custom);
-                  to.push(email);
-                  if (response.status == "success") {
-                    to.push(response.data.email);
-                    composeEmailBasic(to, spamDomain, raw);
-                  }
-                  else
-                    composeEmailBasic(to, spamDomain, raw).then(() => {
-                      createPopup(spamDomain).then((popup) => popup());
-                    });
-                })
-              });
-            }
-            else {
-              if (response.status == "success") {
-                to.push(response.data.email);
-                composeEmailBasic(to, spamDomain, raw);
-              }
-              else
-                composeEmailBasic(to, spamDomain, raw).then(() => {
-                  createPopup(spamDomain).then((popup) => popup());
+    browser.messages.getFull(message.id).then((parsed) => {
+      browser.messages.getRaw(message.id).then((raw) => {
+        browser.storage.local.get("mode").then((configuration) => {
+          var sender = parsed.headers['return-path'][0] || message.author;
+          var spamDomain = extractSpamDomain(sender);
+          var to = [];
+          if (configuration.mode == "registrar" || configuration.mode == "all"){
+            getAbuseEmail(spamDomain).then((x) => x().then((y) => y().then((response) => {
+              if (configuration.mode == "all"){
+                getSpamcopEmail().then((email) => {
+                  getCustomEmail().then((custom) => {
+                    to.push.apply(to, custom);
+                    to.push(email);
+                    if (response.status == "success") {
+                      to.push(response.data.email);
+                      composeEmailBasic(to, spamDomain, raw);
+                    }
+                    else
+                      composeEmailBasic(to, spamDomain, raw).then(() => {
+                        createPopup(spamDomain).then((popup) => popup());
+                      });
+                  })
                 });
-            }
-          })));
-        }
-        else if (configuration.mode == "custom")
-          getCustomEmail().then((custom) => {
-            composeEmailBasic(custom, spamDomain, raw);
-          });
-        else
-          getSpamcopEmail().then((email) => {
-            to.push(email);
-            composeEmailBasic(to, spamDomain, raw);
-          });
-        performAction(message.id);
+              }
+              else {
+                if (response.status == "success") {
+                  to.push(response.data.email);
+                  composeEmailBasic(to, spamDomain, raw);
+                }
+                else
+                  composeEmailBasic(to, spamDomain, raw).then(() => {
+                    createPopup(spamDomain).then((popup) => popup());
+                  });
+              }
+            })));
+          }
+          else if (configuration.mode == "custom")
+            getCustomEmail().then((custom) => {
+              composeEmailBasic(custom, spamDomain, raw);
+            });
+          else
+            getSpamcopEmail().then((email) => {
+              to.push(email);
+              composeEmailBasic(to, spamDomain, raw);
+            });
+          performAction(message.id);
+        });
       });
     });
   });
