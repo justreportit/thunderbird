@@ -3,13 +3,12 @@
     "name": "Just Report It",
     "description": "The proper way to report spam!",
     "default_locale": "en-US",
-    "version": "1.2.3",
+    "version": "2.0.0",
     "author": "Nicolas Provencher",
     "applications": {
         "gecko": {
             "id": "admin@justreport.it",
-            "strict_min_version": "68.0",
-            "strict_max_version": "78.*"
+            "strict_min_version": "91.0"
         }
     },
     "background": {
@@ -34,6 +33,7 @@
     "permissions": [
         "messagesMove",
         "messagesRead",
+        "messagesDelete",
         "accountsRead",
         "storage",
         "menus"
