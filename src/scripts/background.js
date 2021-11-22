@@ -45,8 +45,7 @@ browser.messageDisplayAction.onClicked.addListener((tab) =>{
         }
         else if (configuration.mode == "custom")
           getCustomEmail().then((custom) => {
-            to.concat(custom);
-            composeEmailBasic(to, spamDomain, raw);
+            composeEmailBasic(custom, spamDomain, raw);
           });
         else
           getSpamcopEmail().then((email) => {
