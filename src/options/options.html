@@ -1,129 +1,136 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<title class="i18n_options_title">Just Report It Settings</title>
-		<link type="text/css" href="css/jquery-ui.css" rel="stylesheet">
-		<link type="text/css" href="css/jquery-ui_002.css" rel="stylesheet">
-		<link type="text/css" href="css/jquery-ui-1.css" rel="stylesheet">
-		<link type="text/css" href="css/options-layout.css" rel="stylesheet">
-		<link type="text/css" href="css/bootstrap.min.css" rel="stylesheet">
-	</head>
-	<body class="options">
-		<div id="tabs" class="ui-tabs ui-corner-all ui-widget ui-widget-content">
+    <head>
+        <title class="i18n_options_title">Just Report It Settings</title>
+        <link type="text/css" href="css/jquery-ui.css" rel="stylesheet">
+        <link type="text/css" href="css/jquery-ui_002.css" rel="stylesheet">
+        <link type="text/css" href="css/jquery-ui-1.css" rel="stylesheet">
+        <link type="text/css" href="css/options-layout.css" rel="stylesheet">
+        <link type="text/css" href="css/bootstrap.min.css" rel="stylesheet">
+    </head>
+    <body class="options">
+        <div id="tabs" class="ui-tabs ui-corner-all ui-widget ui-widget-content">
             <ul role="tablist" class="ui-tabs-nav ui-corner-all ui-helper-reset ui-helper-clearfix ui-widget-header">
-								<li id="1" role="tab" class="ui-tabs-tab ui-corner-top ui-state-default ui-tab ui-state-active"><a data-toggle="tab" href="#menu1" class="ui-tabs-anchor"><span id="tab1" class="i18n_options_general_settings">General</span></a></li>
-                <li id="2" role="tab" class="ui-tabs-tab ui-corner-top ui-state-default ui-tab"><a data-toggle="tab" href="#menu2" class="ui-tabs-anchor"><span id="tab2" class="i18n_options_general_settings">WHOIS</span></a></li>
-                <li id="3" role="tab" class="ui-tabs-tab ui-corner-top ui-state-default ui-tab"><a data-toggle="tab" href="#menu3" class="ui-tabs-anchor"><span id="tab3" class="i18n_disabled_sites">Custom Lookup Server</span></a></li>
-								<li id="4" role="tab" class="ui-tabs-tab ui-corner-top ui-state-default ui-tab"><a data-toggle="tab" href="#menu4" class="ui-tabs-anchor"><span id="tab4" class="i18n_disabled_sites">Spam Cop Configuration</span></a></li>
-								<li id="5" role="tab" class="ui-tabs-tab ui-corner-top ui-state-default ui-tab"><a data-toggle="tab" href="#menu5" class="ui-tabs-anchor"><span id="tab5" class="i18n_disabled_sites">Custom Report Address</span></a></li>
+                <li id="1" role="tab" class="ui-tabs-tab ui-corner-top ui-state-default ui-tab ui-state-active">
+                    <a data-toggle="tab" href="#menu1" class="ui-tabs-anchor">
+                    <span id="tab1" class="i18n_options_general_settings">General</span>
+                    </a>
+                </li>
+                <li id="2" role="tab" class="ui-tabs-tab ui-corner-top ui-state-default ui-tab">
+                    <a data-toggle="tab" href="#menu2" class="ui-tabs-anchor">
+                    <span id="tab2" class="i18n_options_general_settings">WHOIS</span>
+                    </a>
+                </li>
+                <li id="3" role="tab" class="ui-tabs-tab ui-corner-top ui-state-default ui-tab">
+                    <a data-toggle="tab" href="#menu3" class="ui-tabs-anchor">
+                    <span id="tab3" class="i18n_disabled_sites">Custom Lookup Server</span>
+                    </a>
+                </li>
+                <li id="4" role="tab" class="ui-tabs-tab ui-corner-top ui-state-default ui-tab">
+                    <a data-toggle="tab" href="#menu4" class="ui-tabs-anchor">
+                    <span id="tab4" class="i18n_disabled_sites">Spam Cop Configuration</span>
+                    </a>
+                </li>
+                <li id="5" role="tab" class="ui-tabs-tab ui-corner-top ui-state-default ui-tab">
+                    <a data-toggle="tab" href="#menu5" class="ui-tabs-anchor">
+                    <span id="tab5" class="i18n_disabled_sites">Custom Report Address</span>
+                    </a>
+                </li>
             </ul>
-		  <div class="tab-content">
-			<div id="menu1" class="tab-pane fade in active">
-        <h3 id="title">Configuration Mode</h3>
-        <p id="description">Select how you would like to report spam (straight to the registrar, to Spam Cop, or to both).</p>
-        <div class="form-check">
-            <input class="form-check-input" type="radio" name="mode" id="registrar">
-            <label class="form-check-label" for="2">
-              Registrar
-            </label>
-          </div>
-          <div class="form-check">
-            <input class="form-check-input" type="radio" name="mode" id="spamcop">
-            <label class="form-check-label" for="2">
-              Spam Cop
-            </label>
+            <div class="tab-content">
+                <div id="menu1" class="tab-pane fade in active">
+                    <h3 id="title">Configuration Mode</h3>
+                    <p id="description">Select how you would like to report spam (straight to the registrar, to Spam Cop, or to both).</p>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="mode" id="registrar">
+                        <label class="form-check-label" for="2">Registrar</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="mode" id="spamcop">
+                        <label class="form-check-label" for="2">Spam Cop</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="mode" id="custom">
+                        <label class="form-check-label" for="2">Custom</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="mode" id="all">
+                        <label class="form-check-label" for="2">All</label>
+                    </div>
+                    <h3 id="title2">Default Action</h3>
+                    <p id="description2">Select what to do after reporting the email.</p>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="action" id="leave">
+                        <label class="form-check-label" id="leave" for="2">Leave It</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="action" id="delete">
+                        <label class="form-check-label" id="delete" for="2">Delete It</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="action" id="move">
+                        <label class="form-check-label" id="move" for="2">Move it to Trash</label>
+                    </div>
+                </div>
+                <div id="menu2" class="tab-pane fade">
+                    <h3 id="title">WHOIS URL Selection</h3>
+                    <p id="description">Select the default WHOIS webpage to load up during a failed lookup with the Just Report It API.</p>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="whois" id="whois1" value="1">
+                        <label class="form-check-label" for="2">whois.com</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="whois" id="whois2" value="2">
+                        <label class="form-check-label" for="2">who.is</label>
+                    </div>
+                </div>
+                <div id="menu3" class="tab-pane fade">
+                    <h3 id="title">Custom Abuse Email Lookup Server</h3>
+                    <p id="description">Set a custom abuse email lookup server instead of using the official Just Report It API.</p>
+                    <div class="form-group">
+                        <label id="label1" for="serverURL">Server URL:</label>
+                        <input type="text" class="form-control" id="serverURL" placeholder="Server URL">
+                        <small id="serverURLHelp" class="form-text text-muted">Example: https://api.justreport.it/lookup/</small>
+                    </div>
+                    <div class="form-group">
+                        <label id="label2" for="apiKey">API Key:</label>
+                        <input type="text" class="form-control" id="apiKey" placeholder="API Key">
+                        <small id="apiKeyHelp" class="form-text text-muted">Example: 123456789</small>
+                    </div>
+                    <button id="submit" type="submit" class="btn btn-primary">Submit</button>
+                    <button id="reset" type="submit" class="btn btn-primary">Reset</button>
+                </div>
+                <div id="menu4" class="tab-pane fade">
+                    <h3 id="title">Spam Cop Configuration</h3>
+                    <p id="description">Specify your SpamCop ID to enable sending reports to Spam Cop.
+                        <br>Your SpamCop ID can be found in the provided report email address: submit.{SpamCopID}@spam.spamcop.net
+                    </p>
+                    <div class="form-group">
+                        <label id="label1">SpamCop ID:</label>
+                        <input type="text" class="form-control" id="spamcopID" placeholder="SpamCop ID">
+                        <small id="spamcopHelp" class="form-text text-muted">Example: bJ2asdjlka
+                        </small>
+                        <br>
+                        <input type="checkbox" id="quick" name="quick" value="quick">
+                        <label id="quickLabel">Enable Quick SpamCop</label>
+                        <br>
+                    </div>
+                    <button id="submit" type="submit" class="btn btn-primary">Submit</button>
+                </div>
+                <div id="menu5" class="tab-pane fade">
+                    <h3 id="title">Custom Report Address</h3>
+                    <p id="description">Specify one or multiple custom email addresses to send reports to.</p>
+                    <div class="form-group">
+                        <label id="label1">Custom report address(es):</label>
+                        <input type="text" class="form-control" id="customEmail" placeholder="Custom report address(es)">
+                        <small id="customEmailHelp" class="form-text text-muted">Example: abuse@email1.com,abuse@email2.com</small>
+                    </div>
+                    <button id="submit" type="submit" class="btn btn-primary">Submit</button>
+                </div>
+            </div>
         </div>
-				<div class="form-check">
-					<input class="form-check-input" type="radio" name="mode" id="custom">
-					<label class="form-check-label" for="2">
-						Custom
-					</label>
-				</div>
-				<div class="form-check">
-					<input class="form-check-input" type="radio" name="mode" id="all">
-					<label class="form-check-label" for="2">
-						All
-					</label>
-				</div>
-				<h3 id="title2">Default Action</h3>
-        <p id="description2">Select what to do after reporting the email.</p>
-        <div class="form-check">
-          <input class="form-check-input" type="radio" name="action" id="leave">
-          <label class="form-check-label" id="leave" for="2">
-            Leave It
-          </label>
-        </div>
-        <div class="form-check">
-          <input class="form-check-input" type="radio" name="action" id="delete">
-          <label class="form-check-label" id="delete" for="2">
-            Delete It
-          </label>
-        </div>
-				<div class="form-check">
-					<input class="form-check-input" type="radio" name="action" id="move">
-					<label class="form-check-label" id="move" for="2">
-						Move it to Trash
-					</label>
-				</div>
-			</div>
-			<div id="menu2" class="tab-pane fade">
-        <h3 id="title">WHOIS URL Selection</h3>
-        <p id="description">Select the default WHOIS webpage to load up during a failed lookup with the Just Report It API.</p>
-        <div class="form-check">
-            <input class="form-check-input" type="radio" name="whois" id="whois1" value="1">
-            <label class="form-check-label" for="2">
-              whois.com
-            </label>
-          </div>
-          <div class="form-check">
-            <input class="form-check-input" type="radio" name="whois" id="whois2" value="2">
-            <label class="form-check-label" for="2">
-              who.is
-            </label>
-        </div>
-			</div>
-			<div id="menu3" class="tab-pane fade">
-        <h3 id="title">Custom Abuse Email Lookup Server</h3>
-        <p id="description">Set a custom abuse email lookup server instead of using the official Just Report It API.</p>
-        <div class="form-group">
-            <label id="label1" for="serverURL">Server URL:</label>
-            <input type="text" class="form-control" id="serverURL" placeholder="Server URL">
-            <small id="serverURLHelp" class="form-text text-muted">Example: https://api.justreport.it/lookup/</small>
-        </div>
-        <div class="form-group">
-            <label id="label2" for="apiKey">API Key:</label>
-            <input type="text" class="form-control" id="apiKey" placeholder="API Key">
-            <small id="apiKeyHelp" class="form-text text-muted">Example: 123456789</small>
-        </div>
-        <button id="submit" type="submit" class="btn btn-primary">Submit</button>
-        <button id="reset" type="submit" class="btn btn-primary">Reset</button>
-			</div>
-			<div id="menu4" class="tab-pane fade">
-        <h3 id="title">Spam Cop Configuration</h3>
-        <p id="description">Specify your SpamCop ID to enable sending reports to Spam Cop. <br>Your SpamCop ID can be found in the provided report email address: submit.{SpamCopID}@spam.spamcop.net</p>
-        <div class="form-group">
-            <label id="label1">SpamCop ID:</label>
-            <input type="text" class="form-control" id="spamcopID" placeholder="SpamCop ID">
-            <small id="spamcopHelp" class="form-text text-muted">Example: bJ2asdjlka</small><br>
-						<input type="checkbox" id="quick" name="quick" value="quick">
-						<label id="quickLabel">Enable Quick SpamCop</label><br>
-				</div>
-        <button id="submit" type="submit" class="btn btn-primary">Submit</button>
-			</div>
-			<div id="menu5" class="tab-pane fade">
-        <h3 id="title">Custom Report Address</h3>
-        <p id="description">Specify one or multiple custom email addresses to send reports to.</p>
-        <div class="form-group">
-            <label id="label1">Custom report address(es):</label>
-            <input type="text" class="form-control" id="customEmail" placeholder="Custom report address(es)">
-            <small id="customEmailHelp" class="form-text text-muted">Example: abuse@email1.com,abuse@email2.com</small>
-        </div>
-        <button id="submit" type="submit" class="btn btn-primary">Submit</button>
-			</div>
-		  </div>
-		</div>
-		<script src="js/jquery.min.js"></script>
+        <script src="js/jquery.min.js"></script>
         <script src="js/bootstrap.min.js"></script>
         <script src="js/options.js"></script>
-	</body>
+    </body>
 </html>

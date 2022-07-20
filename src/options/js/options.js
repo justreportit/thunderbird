@@ -160,6 +160,8 @@ $(document).ready(function(){
       $("#apiKey").val(item["api-key"]);
   });
   browser.storage.local.get("spamcop").then((item) => {
+    if (item.spamcop.includes("quick"))
+      $("#quick").prop("checked", true);
     $("#spamcopID").val(item.spamcop.split(".")[1].split("@")[0]);
   });
   browser.storage.local.get("custom").then((item) => {

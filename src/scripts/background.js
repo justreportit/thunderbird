@@ -77,7 +77,7 @@ function processSelectedMessage(files, messages, index){
     browser.storage.local.get("mode").then((configuration) => {
       if (configuration.mode == "custom")
         getCustomEmail().then((custom) => {
-          composeEmailSelected([custom], files);
+          composeEmailSelected(custom, files);
         });
       else
         getSpamcopEmail().then((email) => {
