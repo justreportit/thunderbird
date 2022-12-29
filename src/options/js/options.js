@@ -59,7 +59,19 @@ $("#menu1 input[name=action]").on("click", function(){
 });
 
 $("#menu2 input").on("click", function(){
-  var whois = ($("#" + this.id)[0].id == "whois1")? "https://whois.com/whois/" : "https://who.is/whois/";
+  var whois = "";
+  switch ($("#" + this.id)[0].id) {
+    case "whois1":
+      whois = "https://whois.com/whois/"
+      break;
+    case "whois2":
+      whois = "https://who.is/whois/"
+      break;
+    case "whois3":
+    default:
+      break;
+  }
+  console.log(whois);
   browser.storage.local.set({"whois":whois});
 });
 
@@ -145,10 +157,17 @@ $(document).ready(function(){
     if (item.whois == "https://whois.com/whois/") {
       $("#whois1").prop("checked", true);
       $("#whois2").prop("checked", false);
+      $("#whois3").prop("checked", false);
+    }
+    else if (item.whois == "https://who.is/whois/"){
+      $("#whois1").prop("checked", false);
+      $("#whois2").prop("checked", true);
+      $("#whois3").prop("checked", false);
     }
     else {
-      $("#whois2").prop("checked", true);
       $("#whois1").prop("checked", false);
+      $("#whois2").prop("checked", false);
+      $("#whois3").prop("checked", true);
     }
   })
   browser.storage.local.get("server").then((item) => {

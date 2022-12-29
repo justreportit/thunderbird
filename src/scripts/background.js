@@ -141,11 +141,13 @@ async function composeEmailSelected(to, files){
 
 function createPopup(domain){
   return browser.storage.local.get("whois").then((item) => async function(){
-    var window = await messenger.windows.create({
-      url: item.whois + domain,
-      type: "popup"
-    });
-    await setFocused(window);
+    if (item.whois != "") {
+      var window = await messenger.windows.create({
+        url: item.whois + domain,
+        type: "popup"
+      });
+      await setFocused(window);
+    }
   });
 }
 
