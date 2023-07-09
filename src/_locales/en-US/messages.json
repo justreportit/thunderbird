@@ -7,6 +7,10 @@
         "message": "Reset",
         "description": "reset button"
     },
+    "general.message.success": {
+        "message": "Successfully updated the settings.",
+        "description": "success message"
+    },
     "general.tab.1": {
         "message": "General",
         "description": "tab 1"

@@ -7,6 +7,10 @@
         "message": "Resetowanie",
         "description": "reset button"
     },
+    "general.message.success": {
+        "message": "Pomyślnie zaktualizowano ustawienia.",
+        "description": "success message"
+    },
     "general.tab.1": {
         "message": "Generał",
         "description": "tab 1"

@@ -7,6 +7,10 @@
         "message": "Resetați",
         "description": "reset button"
     },
+    "general.message.success": {
+        "message": "Setările au fost actualizate cu succes.",
+        "description": "success message"
+    },
     "general.tab.1": {
         "message": "General",
         "description": "tab 1"

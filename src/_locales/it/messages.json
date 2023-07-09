@@ -7,6 +7,10 @@
         "message": "Ripristina",
         "description": "reset button"
     },
+    "general.message.success": {
+        "message": "Aggiornate le impostazioni con successo.",
+        "description": "success message"
+    },
     "general.tab.1": {
         "message": "Generale",
         "description": "tab 1"
