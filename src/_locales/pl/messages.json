@@ -63,6 +63,14 @@
         "message": "Wybierz, co zrobić po zgłoszeniu wiadomości e-mail.",
         "description": "configuration selection description"
     },
+    "options.menu1.title3": {
+        "message": "Przytnij plik",
+        "description": "trim file title"
+    },
+    "options.menu1.description3": {
+        "message": "Jeśli zgłaszasz się do SpamCop, pozostaw tę opcję włączoną, ponieważ nie akceptują już wiadomości e-mail większych niż 50,0 KB.",
+        "description": "trim file description"
+    },
     "options.menu1.leave": {
         "message": "Zostaw to",
         "description": "default action 1"

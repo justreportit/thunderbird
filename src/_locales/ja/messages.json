@@ -63,6 +63,14 @@
         "message": "電子メールを報告した後に何をするかを選択します。",
         "description": "configuration selection description"
     },
+    "options.menu1.title3": {
+        "message": "トリムファイル",
+        "description": "trim file title"
+    },
+    "options.menu1.description3": {
+        "message": "SpamCop に報告している場合は、50.0KB を超える電子メールは受け付けられなくなっているため、これを有効にしておいてください。",
+        "description": "trim file description"
+    },
     "options.menu1.leave": {
         "message": "そのままにしておきます",
         "description": "default action 1"

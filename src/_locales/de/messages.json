@@ -63,6 +63,14 @@
         "message": "Wähle aus, was nach dem Melden der Nachricht geschehen soll.",
         "description": "Auswahl der Standard-Aktion"
     },
+    "options.menu1.title3": {
+        "message": "Datei zuschneiden",
+        "description": "trim file title"
+    },
+    "options.menu1.description3": {
+        "message": "Wenn Sie SpamCop Bericht erstatten, lassen Sie dies aktiviert, da dort keine E-Mails mehr akzeptiert werden, die größer als 50,0 KB sind.",
+        "description": "trim file description"
+    },
     "options.menu1.leave": {
         "message": "Keine Aktion",
         "description": "Die Nachricht bleibt, wie/wo sie ist"

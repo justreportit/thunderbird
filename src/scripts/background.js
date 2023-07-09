@@ -6,6 +6,7 @@ browser.storage.local.get("mode").then((item) => {if (Object.entries(item).lengt
 browser.storage.local.get("spamcop").then((item) => {if (Object.entries(item).length==0){browser.storage.local.set({"spamcop":""})}})
 browser.storage.local.get("action").then((item) => {if (Object.entries(item).length==0){browser.storage.local.set({"action":"leave"})}})
 browser.storage.local.get("custom").then((item) => {if (Object.entries(item).length==0){browser.storage.local.set({"custom":[]})}})
+browser.storage.local.get("trim").then((item) => {if (Object.entries(item).length==0){browser.storage.local.set({"trim":true})}})
 
 browser.messageDisplayAction.onClicked.addListener((tab) =>{
   browser.messageDisplay.getDisplayedMessage(tab.id).then((message) => {
@@ -97,11 +98,30 @@ function processSelectedMessage(files, messages, index){
     });
   } else {
     browser.messages.getRaw(messages[index].id).then((raw) => {
-      files.push({file: new File([raw], "message" + (index + 1) + ".eml")});
-      performAction(messages[index].id);
-      processSelectedMessage(files, messages, index+1);
+      getTrimmedFile(new File([raw], "message" + (index + 1) + ".eml")).then((file) => {
+        files.push({file: file});
+        performAction(messages[index].id);
+        processSelectedMessage(files, messages, index+1);
+      })
     });
   }
+}
+
+async function getTrimmedFile(tmpFile) {
+  let item = await browser.storage.local.get("trim")
+  console.log(item.trim);
+
+  if (item.trim) {
+    // Create a new Blob from the File
+    let blob = new Blob([tmpFile]);
+
+    // Slice the Blob to 50KB
+    let slicedBlob = blob.slice(0, 50 * 1024);
+
+    // Create a new File from the sliced Blob
+    tmpFile = new File([slicedBlob], tmpFile.name);
+  }
+  return tmpFile;
 }
 
 async function performAction(messageId){
@@ -132,7 +152,7 @@ function getCustomEmail(){
 }
 
 async function composeEmailBasic(to, domain, raw){
-  let file = new File([raw], "message.eml");
+  let file = await getTrimmedFile(new File([raw], "message.eml"));
   await browser.compose.beginNew({
     to: to,
     subject: browser.i18n.getMessage("background.subject.basic") + domain,

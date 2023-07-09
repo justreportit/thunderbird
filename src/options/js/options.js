@@ -15,6 +15,8 @@ $("#menu1 #title").html(browser.i18n.getMessage("options.menu1.title"));
 $("#menu1 #description").html(browser.i18n.getMessage("options.menu1.description") + "&emsp;&emsp;&emsp;");
 $("#menu1 #title2").html(browser.i18n.getMessage("options.menu1.title2"));
 $("#menu1 #description2").html(browser.i18n.getMessage("options.menu1.description2") + "&emsp;&emsp;&emsp;");
+$("#menu1 #title3").html(browser.i18n.getMessage("options.menu1.title3"));
+$("#menu1 #description3").html(browser.i18n.getMessage("options.menu1.description3") + "&emsp;&emsp;&emsp;");
 $("#menu1 #leave").html(browser.i18n.getMessage("options.menu1.leave"));
 $("#menu1 #delete").html(browser.i18n.getMessage("options.menu1.delete"));
 $("#menu1 #move").html(browser.i18n.getMessage("options.menu1.move"));
@@ -69,6 +71,14 @@ $("#menu1 input[name=action]").on("click", function(){
   $('#alertSuccess').show();
   var action = $("#" + this.id)[0].id;
   browser.storage.local.set({"action":action});
+});
+
+$("#menu1 input[name=trim]").on("click", function(){
+  $('#alertSuccess').show();
+  if ($("#trim").is(':checked'))
+    browser.storage.local.set({"trim":true});
+  else
+    browser.storage.local.set({"trim":false});
 });
 
 $("#menu2 input").on("click", function(){
@@ -193,6 +203,10 @@ $(document).ready(function(){
       $("#whois3").prop("checked", true);
     }
   })
+  browser.storage.local.get("trim").then((item) => {
+    if (item.trim)
+      $("#trim").prop('checked', true);
+  });
   browser.storage.local.get("server").then((item) => {
     if (item.server != "https://api.justreport.it/lookup/")
       $("#serverURL").val(item.server);
