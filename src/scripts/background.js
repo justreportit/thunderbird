@@ -45,6 +45,17 @@ browser.messageDisplayAction.onClicked.addListener((tab) =>{
               }
             })));
           }
+          else if (configuration.mode == "spamcop_and_custom") {
+            getSpamcopEmail().then((email) => {
+              getCustomEmail().then((custom) => {
+                to.push.apply(to, custom);
+                to.push(email);
+                composeEmailBasic(to, spamDomain, raw).then(() => {
+                  createPopup(spamDomain).then((popup) => popup());
+                });
+              })
+            });
+          }
           else if (configuration.mode == "custom")
             getCustomEmail().then((custom) => {
               composeEmailBasic(custom, spamDomain, raw);
