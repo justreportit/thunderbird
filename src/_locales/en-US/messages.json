@@ -63,6 +63,14 @@
         "message": "Select what to do after reporting the email.",
         "description": "configuration selection description"
     },
+    "options.menu1.title3": {
+        "message": "Trim File",
+        "description": "trim file title"
+    },
+    "options.menu1.description3": {
+        "message": "If you're reporting to SpamCop, keep this enabled because they no longer accept emails larger than 50.0KB.",
+        "description": "trim file description"
+    },
     "options.menu1.leave": {
         "message": "Leave It",
         "description": "default action 1"

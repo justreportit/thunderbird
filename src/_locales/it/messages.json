@@ -63,6 +63,14 @@
         "message": "Seleziona cosa fare dopo aver segnalato l'email.",
         "description": "configuration selection description"
     },
+    "options.menu1.title3": {
+        "message": "File di taglio",
+        "description": "trim file title"
+    },
+    "options.menu1.description3": {
+        "message": "Se stai segnalando a SpamCop, tienilo abilitato perché non accettano più email di dimensioni superiori a 50,0 KB.",
+        "description": "trim file description"
+    },
     "options.menu1.leave": {
         "message": "Lascialo",
         "description": "default action 1"

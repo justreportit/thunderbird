@@ -63,6 +63,14 @@
         "message": "Sélectionnez quoi faire après avoir signalé l'e-mail.",
         "description": "configuration selection description"
     },
+    "options.menu1.title3": {
+        "message": "Couper le fichier",
+        "description": "trim file title"
+    },
+    "options.menu1.description3": {
+        "message": "Si vous signalez à SpamCop, laissez cette option activée car ils n'acceptent plus les e-mails de plus de 50,0 Ko.",
+        "description": "trim file description"
+    },
     "options.menu1.leave": {
         "message": "Laisse-le",
         "description": "default action 1"

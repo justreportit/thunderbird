@@ -63,6 +63,14 @@
         "message": "Selecione o que fazer após relatar o e-mail.",
         "description": "configuration selection description"
     },
+    "options.menu1.title3": {
+        "message": "Arquivo de Corte",
+        "description": "trim file title"
+    },
+    "options.menu1.description3": {
+        "message": "Se você estiver se reportando ao SpamCop, mantenha isso ativado porque eles não aceitam mais e-mails com mais de 50,0 KB.",
+        "description": "trim file description"
+    },
     "options.menu1.leave": {
         "message": "Deixar",
         "description": "default action 1"

@@ -63,6 +63,14 @@
         "message": "Seleccione qué hacer después de informar el correo electrónico.",
         "description": "configuration selection description"
     },
+    "options.menu1.title3": {
+        "message": "Recortar archivo",
+        "description": "trim file title"
+    },
+    "options.menu1.description3": {
+        "message": "Si está informando a SpamCop, mantenga esta opción habilitada porque ya no aceptan correos electrónicos de más de 50,0 KB.",
+        "description": "trim file description"
+    },
     "options.menu1.leave": {
         "message": "Dejalo",
         "description": "default action 1"

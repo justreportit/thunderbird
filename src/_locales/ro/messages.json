@@ -63,6 +63,14 @@
         "message": "Selectați ce să faceți după raportarea e-mailului.",
         "description": "configuration selection description"
     },
+    "options.menu1.title3": {
+        "message": "Tăiați fișierul",
+        "description": "trim file title"
+    },
+    "options.menu1.description3": {
+        "message": "Dacă raportați la SpamCop, mențineți această opțiune activată, deoarece nu mai acceptă e-mailuri mai mari de 50,0 KB.",
+        "description": "trim file description"
+    },
     "options.menu1.leave": {
         "message": "Lăsați-l",
         "description": "default action 1"
