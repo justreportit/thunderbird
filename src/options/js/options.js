@@ -44,21 +44,29 @@ $("#menu5 #submit").html(browser.i18n.getMessage("general.submit"));
 
 // Main Interface
 $("li").on("click", function(){
+  $('#alertSuccess').hide();
+  $('#alertSuccess2').hide();
+  $('#alertSuccess3').hide();
+  $('#alertSuccess4').hide();
+  $('#alertSuccess5').hide();
   $("li").removeClass("ui-state-active");
   $("#" + this.id).addClass("ui-state-active");
 });
 
 $("#menu1 input[name=mode]").on("click", function(){
+  $('#alertSuccess').show();
   var mode = $("#" + this.id)[0].id;
   browser.storage.local.set({"mode":mode});
 });
 
 $("#menu1 input[name=action]").on("click", function(){
+  $('#alertSuccess').show();
   var action = $("#" + this.id)[0].id;
   browser.storage.local.set({"action":action});
 });
 
 $("#menu2 input").on("click", function(){
+  $('#alertSuccess2').show();
   var whois = "";
   switch ($("#" + this.id)[0].id) {
     case "whois1":
@@ -71,16 +79,17 @@ $("#menu2 input").on("click", function(){
     default:
       break;
   }
-  console.log(whois);
   browser.storage.local.set({"whois":whois});
 });
 
 $("#menu3 #submit").on("click", function(){
+  $('#alertSuccess3').show();
   browser.storage.local.set({"server":$("#serverURL").val().trim()})
   browser.storage.local.set({"api-key":$("#apiKey").val().trim()})
 });
 
 $("#menu3 #reset").on("click", function(){
+  $('#alertSuccess3').show();
   $("#serverURL").val("");
   $("#apiKey").val("");
   browser.storage.local.set({"server":"https://api.justreport.it/lookup/"})
@@ -88,6 +97,7 @@ $("#menu3 #reset").on("click", function(){
 });
 
 $("#menu4 #submit").on("click", function(){
+  $('#alertSuccess4').show();
   var spamcop = "";
   if ($("#menu4 #quick").prop('checked'))
     spamcop = "quick." + $("#spamcopID").val().trim() + "@spam.spamcop.net"
@@ -97,6 +107,7 @@ $("#menu4 #submit").on("click", function(){
 });
 
 $("#menu5 #submit").on("click", function(){
+  $('#alertSuccess5').show();
   var temp = $("#customEmail").val().trim()
   if (temp.split(",").length > 1){
     var custom = [];
@@ -110,6 +121,12 @@ $("#menu5 #submit").on("click", function(){
 });
 
 $(document).ready(function(){
+  $('#alertSuccess').hide();
+  $('#alertSuccess2').hide();
+  $('#alertSuccess3').hide();
+  $('#alertSuccess4').hide();
+  $('#alertSuccess5').hide();
+
   browser.storage.local.get("mode").then((item) => {
     if (item.mode == "registrar"){
       $("#registrar").prop("checked", true);

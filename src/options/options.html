@@ -40,6 +40,9 @@
             <div class="tab-content">
                 <div id="menu1" class="tab-pane fade in active">
                     <h3 id="title">Configuration Mode</h3>
+                    <div id="alertSuccess" class="alert alert-success" role="alert">
+                        Successfully updated the settings.
+                    </div>
                     <p id="description">Select how you would like to report spam (straight to the registrar, to Spam Cop, or to both).</p>
                     <div class="form-check">
                         <input class="form-check-input" type="radio" name="mode" id="registrar">
@@ -74,6 +77,9 @@
                 </div>
                 <div id="menu2" class="tab-pane fade">
                     <h3 id="title">WHOIS URL Selection</h3>
+                    <div id="alertSuccess2" class="alert alert-success" role="alert">
+                        Successfully updated the settings.
+                    </div>
                     <p id="description">Select the default WHOIS webpage to load up during a failed lookup with the Just Report It API.</p>
                     <div class="form-check">
                         <input class="form-check-input" type="radio" name="whois" id="whois1" value="1">
@@ -90,6 +96,9 @@
                 </div>
                 <div id="menu3" class="tab-pane fade">
                     <h3 id="title">Custom Abuse Email Lookup Server</h3>
+                    <div id="alertSuccess3" class="alert alert-success" role="alert">
+                        Successfully updated the settings.
+                    </div>
                     <p id="description">Set a custom abuse email lookup server instead of using the official Just Report It API.</p>
                     <div class="form-group">
                         <label id="label1" for="serverURL">Server URL:</label>
@@ -106,6 +115,9 @@
                 </div>
                 <div id="menu4" class="tab-pane fade">
                     <h3 id="title">Spam Cop Configuration</h3>
+                    <div id="alertSuccess4" class="alert alert-success" role="alert">
+                        Successfully updated the settings.
+                    </div>
                     <p id="description">Specify your SpamCop ID to enable sending reports to Spam Cop.
                         <br>Your SpamCop ID can be found in the provided report email address: submit.{SpamCopID}@spam.spamcop.net
                     </p>
@@ -123,6 +135,9 @@
                 </div>
                 <div id="menu5" class="tab-pane fade">
                     <h3 id="title">Custom Report Address</h3>
+                    <div id="alertSuccess5" class="alert alert-success" role="alert">
+                        Successfully updated the settings.
+                    </div>
                     <p id="description">Specify one or multiple custom email addresses to send reports to.</p>
                     <div class="form-group">
                         <label id="label1">Custom report address(es):</label>
