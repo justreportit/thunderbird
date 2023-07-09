@@ -5,6 +5,12 @@ $("#tab3").html(browser.i18n.getMessage("general.tab.3"));
 $("#tab4").html(browser.i18n.getMessage("general.tab.4"));
 $("#tab5").html(browser.i18n.getMessage("general.tab.5"));
 
+$("#alertSuccess").html(browser.i18n.getMessage("general.message.success"));
+$("#alertSuccess2").html(browser.i18n.getMessage("general.message.success"));
+$("#alertSuccess3").html(browser.i18n.getMessage("general.message.success"));
+$("#alertSuccess4").html(browser.i18n.getMessage("general.message.success"));
+$("#alertSuccess5").html(browser.i18n.getMessage("general.message.success"));
+
 $("#menu1 #title").html(browser.i18n.getMessage("options.menu1.title"));
 $("#menu1 #description").html(browser.i18n.getMessage("options.menu1.description") + "&emsp;&emsp;&emsp;");
 $("#menu1 #title2").html(browser.i18n.getMessage("options.menu1.title2"));

@@ -7,6 +7,10 @@
         "message": "リセット",
         "description": "reset button"
     },
+    "general.message.success": {
+        "message": "設定が正常に更新されました。",
+        "description": "success message"
+    },
     "general.tab.1": {
         "message": "一般",
         "description": "tab 1"

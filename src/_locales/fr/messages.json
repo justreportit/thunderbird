@@ -7,6 +7,10 @@
         "message": "Réinitialiser",
         "description": "reset button"
     },
+    "general.message.success": {
+        "message": "Les paramètres ont été mis à jour avec succès.",
+        "description": "success message"
+    },
     "general.tab.1": {
         "message": "Général",
         "description": "tab 1"

@@ -7,6 +7,10 @@
         "message": "Zurücksetzen",
         "description": "Änderungen zurücksetzen"
     },
+    "general.message.success": {
+        "message": "Die Einstellungen wurden erfolgreich aktualisiert.",
+        "description": "success message"
+    },
     "general.tab.1": {
         "message": "Allgemein",
         "description": "Allgemeine Einstellungen"
