@@ -98,7 +98,7 @@ function processSelectedMessage(files, messages, index){
     });
   } else {
     browser.messages.getRaw(messages[index].id).then((raw) => {
-      getTrimmedFile(new File([raw], "message" + (index + 1) + ".eml")).then((file) => {
+      getTrimmedFile(new File(convertRawToUint8Array(raw), "message" + (index + 1) + ".eml", { type: 'message/rfc822' })).then((file) => {
         files.push({file: file});
         performAction(messages[index].id);
         processSelectedMessage(files, messages, index+1);
@@ -107,10 +107,17 @@ function processSelectedMessage(files, messages, index){
   }
 }
 
+function convertRawToUint8Array(raw) {
+  // Reason: https://thunderbird.topicbox.com/groups/addons/T06356567165277ee-M25e96f2d58e961d6167ad348
+  let bytes = new Array(raw.length);
+  for (let i = 0; i < bytes.length; i++) {
+    bytes[i] = raw.charCodeAt(i) & 0xFF;
+  }
+  return [new Uint8Array(bytes)];
+}
+
 async function getTrimmedFile(tmpFile) {
   let item = await browser.storage.local.get("trim")
-  console.log(item.trim);
-
   if (item.trim) {
     // Create a new Blob from the File
     let blob = new Blob([tmpFile]);
@@ -152,7 +159,7 @@ function getCustomEmail(){
 }
 
 async function composeEmailBasic(to, domain, raw){
-  let file = await getTrimmedFile(new File([raw], "message.eml"));
+  let file = await getTrimmedFile(new File(convertRawToUint8Array(raw), "message.eml", { type: 'message/rfc822' }));
   await browser.compose.beginNew({
     to: to,
     subject: browser.i18n.getMessage("background.subject.basic") + domain,
