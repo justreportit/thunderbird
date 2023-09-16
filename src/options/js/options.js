@@ -218,7 +218,8 @@ $(document).ready(function(){
   browser.storage.local.get("spamcop").then((item) => {
     if (item.spamcop.includes("quick"))
       $("#quick").prop("checked", true);
-    $("#spamcopID").val(item.spamcop.split(".")[1].split("@")[0]);
+    if (item.spamcop !== "")
+      $("#spamcopID").val(item.spamcop.split(".")[1].split("@")[0]);
   });
   browser.storage.local.get("custom").then((item) => {
     var custom = "";

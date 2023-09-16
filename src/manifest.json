@@ -1,14 +1,14 @@
 {
-    "manifest_version": 2,
+    "manifest_version": 3,
     "name": "Just Report It",
     "description": "The proper way to report spam!",
     "default_locale": "en-US",
-    "version": "2.4.0",
+    "version": "3.0.0",
     "author": "Nicolas Provencher",
-    "applications": {
+    "browser_specific_settings": {
         "gecko": {
             "id": "admin@justreport.it",
-            "strict_min_version": "91.0"
+            "strict_min_version": "115.0"
         }
     },
     "background": {
@@ -23,8 +23,7 @@
     },
     "options_ui": {
         "page": "options/options.html",
-        "open_in_tab": false,
-        "browser_style": true
+        "open_in_tab": false
     },
     "message_display_action": {
         "default_title": "Report it",
@@ -36,6 +35,7 @@
         "messagesDelete",
         "accountsRead",
         "storage",
-        "menus"
+        "menus",
+        "sensitiveDataUpload"
     ]
 }
