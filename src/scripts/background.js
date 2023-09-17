@@ -12,61 +12,65 @@ browser.messageDisplayAction.onClicked.addListener((tab) =>{
   browser.messageDisplay.getDisplayedMessage(tab.id).then((message) => {
     browser.messages.getFull(message.id).then((parsed) => {
       browser.messages.getRaw(message.id).then((raw) => {
-        browser.storage.local.get("mode").then((configuration) => {
-          var sender = parsed.headers['return-path'][0] || message.author;
-          var spamDomain = extractSpamDomain(sender);
-          var to = [];
-          if (configuration.mode == "registrar" || configuration.mode == "all"){
-            getAbuseEmail(spamDomain).then((x) => x().then((y) => y().then((response) => {
-              if (configuration.mode == "all"){
-                getSpamcopEmail().then((email) => {
-                  getCustomEmail().then((custom) => {
-                    to.push.apply(to, custom);
-                    to.push(email);
-                    if (response.status == "success") {
-                      to.push(response.data.email);
-                      composeEmailBasic(to, spamDomain, raw);
-                    }
-                    else
-                      composeEmailBasic(to, spamDomain, raw).then(() => {
-                        createPopup(spamDomain).then((popup) => popup());
-                      });
-                  })
-                });
-              }
-              else {
-                if (response.status == "success") {
-                  to.push(response.data.email);
-                  composeEmailBasic(to, spamDomain, raw);
+        browser.accounts.list().then((accounts) => {
+          browser.storage.local.get("mode").then((configuration) => {
+            let account = accounts.find(account => account.id === message.folder.accountId);
+            let identity = account.identities[0];
+            var sender = parsed.headers['return-path'][0] || message.author;
+            var spamDomain = extractSpamDomain(sender);
+            var to = [];
+            if (configuration.mode == "registrar" || configuration.mode == "all"){
+              getAbuseEmail(spamDomain).then((x) => x().then((y) => y().then((response) => {
+                if (configuration.mode == "all"){
+                  getSpamcopEmail().then((email) => {
+                    getCustomEmail().then((custom) => {
+                      to.push.apply(to, custom);
+                      to.push(email);
+                      if (response.status == "success") {
+                        to.push(response.data.email);
+                        composeEmailBasic(to, spamDomain, raw, identity);
+                      }
+                      else
+                        composeEmailBasic(to, spamDomain, raw, identity).then(() => {
+                          createPopup(spamDomain).then((popup) => popup());
+                        });
+                    })
+                  });
                 }
-                else
-                  composeEmailBasic(to, spamDomain, raw).then(() => {
+                else {
+                  if (response.status == "success") {
+                    to.push(response.data.email);
+                    composeEmailBasic(to, spamDomain, raw, identity);
+                  }
+                  else
+                    composeEmailBasic(to, spamDomain, raw, identity).then(() => {
+                      createPopup(spamDomain).then((popup) => popup());
+                    });
+                }
+              })));
+            }
+            else if (configuration.mode == "spamcop_and_custom") {
+              getSpamcopEmail().then((email) => {
+                getCustomEmail().then((custom) => {
+                  to.push.apply(to, custom);
+                  to.push(email);
+                  composeEmailBasic(to, spamDomain, raw, identity).then(() => {
                     createPopup(spamDomain).then((popup) => popup());
                   });
-              }
-            })));
-          }
-          else if (configuration.mode == "spamcop_and_custom") {
-            getSpamcopEmail().then((email) => {
+                })
+              });
+            }
+            else if (configuration.mode == "custom")
               getCustomEmail().then((custom) => {
-                to.push.apply(to, custom);
+                composeEmailBasic(custom, spamDomain, raw, identity);
+              });
+            else
+              getSpamcopEmail().then((email) => {
                 to.push(email);
-                composeEmailBasic(to, spamDomain, raw).then(() => {
-                  createPopup(spamDomain).then((popup) => popup());
-                });
-              })
-            });
-          }
-          else if (configuration.mode == "custom")
-            getCustomEmail().then((custom) => {
-              composeEmailBasic(custom, spamDomain, raw);
-            });
-          else
-            getSpamcopEmail().then((email) => {
-              to.push(email);
-              composeEmailBasic(to, spamDomain, raw);
-            });
-          performAction(message.id);
+                composeEmailBasic(to, spamDomain, raw, identity);
+              });
+            performAction(message.id);
+          });
         });
       });
     });
@@ -158,13 +162,14 @@ function getCustomEmail(){
   });
 }
 
-async function composeEmailBasic(to, domain, raw){
+async function composeEmailBasic(to, domain, raw, identity){
   let file = await getTrimmedFile(new File(convertRawToUint8Array(raw), "message.eml", { type: 'message/rfc822' }));
   await browser.compose.beginNew({
     to: to,
     subject: browser.i18n.getMessage("background.subject.basic") + domain,
     plainTextBody: browser.i18n.getMessage("background.body.basic"),
-    attachments: [{file:file}]
+    attachments: [{file:file}],
+    identityId: identity.id
   });
 }
 
