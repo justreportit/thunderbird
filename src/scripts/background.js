@@ -79,7 +79,6 @@ browser.menus.create({
 });
 
 browser.menus.onClicked.addListener((info, tab) => {
-  console.log("test");
   if ('selectedMessages' in info){
     processSelectedMessage([], info.selectedMessages.messages, 0);
   }
