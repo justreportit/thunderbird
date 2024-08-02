@@ -148,24 +148,35 @@ $(document).ready(function(){
       $("#registrar").prop("checked", true);
       $("#spamcop").prop("checked", false);
       $("#custom").prop("checked", false);
+      $("#spamcop_and_custom").prop("checked", false);
       $("#all").prop("checked", false);
     }
     else if (item.mode == "spamcop"){
       $("#registrar").prop("checked", false);
       $("#spamcop").prop("checked", true);
       $("#custom").prop("checked", false);
+      $("#spamcop_and_custom").prop("checked", false);
       $("#all").prop("checked", false);
     }
     else if (item.mode == "custom"){
       $("#registrar").prop("checked", false);
       $("#spamcop").prop("checked", false);
       $("#custom").prop("checked", true);
+      $("#spamcop_and_custom").prop("checked", false);
+      $("#all").prop("checked", false);
+    }
+    else if (item.mode == "spamcop_and_custom"){
+      $("#registrar").prop("checked", false);
+      $("#spamcop").prop("checked", false);
+      $("#custom").prop("checked", false);
+      $("#spamcop_and_custom").prop("checked", true);
       $("#all").prop("checked", false);
     }
     else {
       $("#registrar").prop("checked", false);
       $("#spamcop").prop("checked", false);
       $("#custom").prop("checked", false);
+      $("#spamcop_and_custom").prop("checked", false);
       $("#all").prop("checked", true);
     }
   });
