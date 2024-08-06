@@ -83,6 +83,14 @@
         "message": "Przenieś do kosza",
         "description": "default action 3"
     },
+    "options.menu1.title4": {
+        "message": "Rozszerzenie pliku",
+        "description": "Title for file extension selection"
+    },
+    "options.menu1.description4": {
+        "message": "Wybierz rozszerzenie pliku do użycia w załączniku podczas zgłaszania spamu.",
+        "description": "Description for file extension selection"
+    },
     "options.menu2.title": {
         "message": "Wybór adresu URL WHOIS",
         "description": "whois selection title"

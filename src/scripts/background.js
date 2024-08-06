@@ -7,6 +7,9 @@ browser.storage.local.get("spamcop").then((item) => {if (Object.entries(item).le
 browser.storage.local.get("action").then((item) => {if (Object.entries(item).length==0){browser.storage.local.set({"action":"leave"})}})
 browser.storage.local.get("custom").then((item) => {if (Object.entries(item).length==0){browser.storage.local.set({"custom":[]})}})
 browser.storage.local.get("trim").then((item) => {if (Object.entries(item).length==0){browser.storage.local.set({"trim":true})}})
+browser.storage.local.get("extension").then((item) => {if (Object.entries(item).length==0){browser.storage.local.set({"extension":"eml"})}})
+
+
 
 browser.messageDisplayAction.onClicked.addListener((tab) =>{
   browser.messageDisplay.getDisplayedMessage(tab.id).then((message) => {
@@ -98,7 +101,7 @@ function processSelectedMessage(files, messages, index){
     });
   } else {
     browser.messages.getRaw(messages[index].id).then((raw) => {
-      getTrimmedFile(new File(convertRawToUint8Array(raw), "message" + (index + 1) + ".eml", { type: 'message/rfc822' })).then((file) => {
+      getTrimmedFile(new Blob(convertRawToUint8Array(raw), { type: 'message/rfc822' })).then((file) => {
         files.push({file: file});
         performAction(messages[index].id);
         processSelectedMessage(files, messages, index+1);
@@ -118,18 +121,20 @@ function convertRawToUint8Array(raw) {
 
 async function getTrimmedFile(tmpFile) {
   let item = await browser.storage.local.get("trim")
+  let extensionSetting = await browser.storage.local.get("extension")
+
+  let extension = extensionSetting.extension || 'eml';
+  let fileName = `message.${extension}`;
+
+  let blob = new Blob([tmpFile], { type: 'message/rfc822' });
+
   if (item.trim) {
-    // Create a new Blob from the File
-    let blob = new Blob([tmpFile]);
-
-    // Slice the Blob to 50KB
-    let slicedBlob = blob.slice(0, 50 * 1024);
-
-    // Create a new File from the sliced Blob
-    tmpFile = new File([slicedBlob], tmpFile.name);
+    blob = blob.slice(0, 50 * 1024);
   }
-  return tmpFile;
+
+  return new File([blob], fileName, { type: 'message/rfc822' });
 }
+
 
 async function performAction(messageId){
   browser.storage.local.get("action").then((item) => {
@@ -159,7 +164,7 @@ function getCustomEmail(){
 }
 
 async function composeEmailBasic(to, domain, raw, message){
-  let file = await getTrimmedFile(new File(convertRawToUint8Array(raw), "message.eml", { type: 'message/rfc822' }));
+  let file = await getTrimmedFile(new Blob(convertRawToUint8Array(raw), { type: 'message/rfc822' }));
   let identity = await getIdentity(message);
   let composeDetails = {
     to: to,

@@ -83,6 +83,14 @@
         "message": "Spostalo nel cestino",
         "description": "default action 3"
     },
+    "options.menu1.title4": {
+        "message": "Estensione del file",
+        "description": "Title for file extension selection"
+    },
+    "options.menu1.description4": {
+        "message": "Seleziona l'estensione del file da utilizzare per l'allegato durante la segnalazione di spam.",
+        "description": "Description for file extension selection"
+    },
     "options.menu2.title": {
         "message": "Selezione URL WHOIS",
         "description": "whois selection title"
