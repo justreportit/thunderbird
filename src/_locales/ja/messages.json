@@ -31,8 +31,12 @@
         "message": "カスタムレポートアドレス",
         "description": "tab 5"
     },
+    "general.tab.6": {
+        "message": "メッセージ",
+        "description": "Tab label for custom message settings"
+    },
     "background.subject.basic": {
-        "message": "スパムの悪用： ",
+        "message": "スパムの悪用",
         "description": "abuse report subject"
     },
     "background.subject.selected": {
@@ -174,5 +178,41 @@
     "options.menu5.customEmailHelp": {
         "message": "例: abuse@email1.com,abuse@email2.com",
         "description": "Custom address example"
+    },
+    "options.menu6.title": {
+        "message": "カスタムメッセージ",
+        "description": "Title for custom message tab"
+    },
+    "options.menu6.description": {
+        "message": "不正使用レポートメッセージのカスタムタイトルと本文を指定します。",
+        "description": "Description for custom message tab"
+    },
+    "options.menu6.label1": {
+        "message": "メッセージソース：",
+        "description": "Label for message source selection"
+    },
+    "options.menu6.label2": {
+        "message": "カスタムタイトル：",
+        "description": "Label for custom title input"
+    },
+    "options.menu6.label3": {
+        "message": "カスタム本文：",
+        "description": "Label for custom body input"
+    },
+    "options.menu6.source.locales": {
+        "message": "ローカライズ",
+        "description": "Option for locales message source"
+    },
+    "options.menu6.locales": {
+        "message": "ローカライズ",
+        "description": "Locales option"
+    },
+    "options.menu6.english": {
+        "message": "英語",
+        "description": "English option"
+    },
+    "options.menu6.custom": {
+        "message": "カスタム",
+        "description": "Custom option"
     }
 }

@@ -8,6 +8,9 @@ browser.storage.local.get("action").then((item) => {if (Object.entries(item).len
 browser.storage.local.get("custom").then((item) => {if (Object.entries(item).length==0){browser.storage.local.set({"custom":[]})}})
 browser.storage.local.get("trim").then((item) => {if (Object.entries(item).length==0){browser.storage.local.set({"trim":true})}})
 browser.storage.local.get("extension").then((item) => {if (Object.entries(item).length==0){browser.storage.local.set({"extension":"eml"})}})
+browser.storage.local.get("messageSource").then((item) => {if (Object.entries(item).length==0){browser.storage.local.set({"messageSource":"locales"})}})
+browser.storage.local.get("customTitle").then((item) => {if (Object.entries(item).length==0){browser.storage.local.set({"customTitle":""})}})
+browser.storage.local.get("customBody").then((item) => {if (Object.entries(item).length==0){browser.storage.local.set({"customBody":""})}})
 
 
 
@@ -163,13 +166,39 @@ function getCustomEmail(){
   });
 }
 
-async function composeEmailBasic(to, domain, raw, message){
+
+async function getMessageContent() {
+  let { messageSource } = await browser.storage.local.get("messageSource");
+
+  if (messageSource === "locales") {
+    return {
+      subject: browser.i18n.getMessage("background.subject.basic"),
+      body: browser.i18n.getMessage("background.body.basic")
+    };
+  } else if (messageSource === "english") {
+    return {
+      subject: "Spam Abuse from",
+      body: "The attached message was marked as spam as it is sending unsolicited emails. Please take appropriate action.\n\n--"
+    };
+  } else if (messageSource === "custom") {
+    let { customTitle, customBody } = await browser.storage.local.get(["customTitle", "customBody"]);
+    return {
+      subject: customTitle,
+      body: customBody
+    };
+  }
+}
+
+// Update composeEmailBasic and composeEmailSelected to use getMessageContent
+async function composeEmailBasic(to, domain, raw, message) {
   let file = await getTrimmedFile(new Blob(convertRawToUint8Array(raw), { type: 'message/rfc822' }));
   let identity = await getIdentity(message);
+  let messageContent = await getMessageContent();
+
   let composeDetails = {
     to: to,
-    subject: browser.i18n.getMessage("background.subject.basic") + domain,
-    plainTextBody: browser.i18n.getMessage("background.body.basic"),
+    subject: messageContent.subject + ": " + domain,
+    plainTextBody: messageContent.body,
     attachments: [{ file: file }]
   };
 
@@ -180,12 +209,16 @@ async function composeEmailBasic(to, domain, raw, message){
   await browser.compose.beginNew(composeDetails);
 }
 
-async function composeEmailSelected(to, files, message){
+// Similar changes for composeEmailSelected
+
+async function composeEmailSelected(to, files, message) {
   let identity = await getIdentity(message);
+  let messageContent = await getMessageContent();
+
   let composeDetails = {
     to: to,
-    subject: browser.i18n.getMessage("background.subject.selected") + " [" + files.length + "]",
-    plainTextBody: browser.i18n.getMessage("background.body.selected"),
+    subject: messageContent.subject + " [" + files.length + "]",
+    plainTextBody: messageContent.body,
     attachments: files
   };
 

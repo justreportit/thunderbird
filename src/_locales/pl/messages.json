@@ -31,8 +31,12 @@
         "message": "Adres raportu niestandardowego",
         "description": "tab 5"
     },
+    "general.tab.6": {
+        "message": "Wiadomość",
+        "description": "Tab label for custom message settings"
+    },
     "background.subject.basic": {
-        "message": "Nadużycie spamu z: ",
+        "message": "Nadużycie spamu z",
         "description": "abuse report subject"
     },
     "background.subject.selected": {
@@ -174,5 +178,41 @@
     "options.menu5.customEmailHelp": {
         "message": "Przykład: abuse@email1.com,abuse@email2.com",
         "description": "Custom address example"
+    },
+    "options.menu6.title": {
+        "message": "Niestandardowa wiadomość",
+        "description": "Title for custom message tab"
+    },
+    "options.menu6.description": {
+        "message": "Określ niestandardowy tytuł i treść wiadomości raportu o nadużyciu.",
+        "description": "Description for custom message tab"
+    },
+    "options.menu6.label1": {
+        "message": "Źródło wiadomości:",
+        "description": "Label for message source selection"
+    },
+    "options.menu6.label2": {
+        "message": "Niestandardowy tytuł:",
+        "description": "Label for custom title input"
+    },
+    "options.menu6.label3": {
+        "message": "Niestandardowa treść:",
+        "description": "Label for custom body input"
+    },
+    "options.menu6.source.locales": {
+        "message": "Lokalizacje",
+        "description": "Option for locales message source"
+    },
+    "options.menu6.locales": {
+        "message": "Lokalizacje",
+        "description": "Locales option"
+    },
+    "options.menu6.english": {
+        "message": "Angielski",
+        "description": "English option"
+    },
+    "options.menu6.custom": {
+        "message": "Niestandardowy",
+        "description": "Custom option"
     }
 }
