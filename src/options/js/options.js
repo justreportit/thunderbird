@@ -4,6 +4,7 @@ $("#tab2").html(browser.i18n.getMessage("general.tab.2"));
 $("#tab3").html(browser.i18n.getMessage("general.tab.3"));
 $("#tab4").html(browser.i18n.getMessage("general.tab.4"));
 $("#tab5").html(browser.i18n.getMessage("general.tab.5"));
+$("#tab6").html(browser.i18n.getMessage("general.tab.6"));
 
 $("#alertSuccess").html(browser.i18n.getMessage("general.message.success"));
 $("#alertSuccess2").html(browser.i18n.getMessage("general.message.success"));
@@ -51,6 +52,16 @@ $("#menu5 #label1").html(browser.i18n.getMessage("options.menu5.label1"));
 $("#menu5 #customEmail").html(browser.i18n.getMessage("options.menu5.customEmail"));
 $("#menu5 #customEmailHelp").html(browser.i18n.getMessage("options.menu5.customEmailHelp"));
 $("#menu5 #submit").html(browser.i18n.getMessage("general.submit"));
+
+$("#menu6 #title").html(browser.i18n.getMessage("options.menu6.title"));
+$("#menu6 #description").html(browser.i18n.getMessage("options.menu6.description") + "&emsp;&emsp;&emsp;");
+$("#menu6 #label1").html(browser.i18n.getMessage("options.menu6.label1"));
+$("#menu6 #label2").html(browser.i18n.getMessage("options.menu6.label2"));
+$("#menu6 #label3").html(browser.i18n.getMessage("options.menu6.label3"));$("#messageSource .i18n_source_locales").html(browser.i18n.getMessage("options.menu6.source.locales"));
+$("#menu6 #locales").html(browser.i18n.getMessage("options.menu6.locales"));
+$("#menu6 #english").html(browser.i18n.getMessage("options.menu6.english"));
+$("#menu6 #custom").html(browser.i18n.getMessage("options.menu6.custom"));
+$("#menu6 #submit").html(browser.i18n.getMessage("general.submit"));
 
 // Main Interface
 $("li").on("click", function(){
@@ -145,12 +156,36 @@ $("#menu5 #submit").on("click", function(){
     browser.storage.local.set({"custom":[]})
 });
 
+$("#messageSource").on("change", function() {
+  if ($(this).val() === "custom") {
+    $("#customMessageFields").show();
+  } else {
+    $("#customMessageFields").hide();
+  }
+});
+
+$("#menu6 #submit").on("click", function(){
+  $('#alertSuccess6').show();
+  let messageSource = $("#messageSource").val();
+  browser.storage.local.set({"messageSource": messageSource});
+
+  if (messageSource === "custom") {
+    let customTitle = $("#customTitle").val().trim();
+    let customBody = $("#customBody").val().trim();
+    browser.storage.local.set({
+      "customTitle": customTitle,
+      "customBody": customBody
+    });
+  }
+});
+
 $(document).ready(function(){
   $('#alertSuccess').hide();
   $('#alertSuccess2').hide();
   $('#alertSuccess3').hide();
   $('#alertSuccess4').hide();
   $('#alertSuccess5').hide();
+  $('#alertSuccess6').hide();
 
   browser.storage.local.get("mode").then((item) => {
     if (item.mode == "registrar"){
@@ -255,5 +290,15 @@ $(document).ready(function(){
     var custom = "";
     item.custom.forEach((element) => custom += element + ",");
     $("#customEmail").val(custom.slice(0, -1));
+  });
+  browser.storage.local.get("messageSource").then((item) => {
+    $("#messageSource").val(item.messageSource || "locales");
+    if (item.messageSource === "custom") {
+      $("#customMessageFields").show();
+    }
+  });
+  browser.storage.local.get(["customTitle", "customBody"]).then((item) => {
+    $("#customTitle").val(item.customTitle || "");
+    $("#customBody").val(item.customBody || "");
   });
 });

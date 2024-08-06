@@ -31,8 +31,12 @@
         "message": "Indirizzo report personalizzato",
         "description": "tab 5"
     },
+    "general.tab.6": {
+        "message": "Messaggio",
+        "description": "Tab label for custom message settings"
+    },
     "background.subject.basic": {
-        "message": "Abuso di spam da: ",
+        "message": "Abuso di spam da",
         "description": "abuse report subject"
     },
     "background.subject.selected": {
@@ -174,5 +178,41 @@
     "options.menu5.customEmailHelp": {
         "message": "Esempio: abuse@email1.com,abuse@email2.com",
         "description": "Custom address example"
+    },
+    "options.menu6.title": {
+        "message": "Messaggio personalizzato",
+        "description": "Title for custom message tab"
+    },
+    "options.menu6.description": {
+        "message": "Specifica un titolo e un corpo personalizzati per il messaggio di segnalazione abusi.",
+        "description": "Description for custom message tab"
+    },
+    "options.menu6.label1": {
+        "message": "Fonte del messaggio:",
+        "description": "Label for message source selection"
+    },
+    "options.menu6.label2": {
+        "message": "Titolo personalizzato:",
+        "description": "Label for custom title input"
+    },
+    "options.menu6.label3": {
+        "message": "Corpo personalizzato:",
+        "description": "Label for custom body input"
+    },
+    "options.menu6.source.locales": {
+        "message": "Localizzazioni",
+        "description": "Option for locales message source"
+    },
+    "options.menu6.locales": {
+        "message": "Localizzazioni",
+        "description": "Locales option"
+    },
+    "options.menu6.english": {
+        "message": "Inglese",
+        "description": "English option"
+    },
+    "options.menu6.custom": {
+        "message": "Personalizzato",
+        "description": "Custom option"
     }
 }

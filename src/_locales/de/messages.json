@@ -31,8 +31,12 @@
         "message": "Melde-Adresse",
         "description": "Anpassungen der individuellen Melde-Adresse"
     },
+    "general.tab.6": {
+        "message": "Nachricht",
+        "description": "Tab label for custom message settings"
+    },
     "background.subject.basic": {
-        "message": "Spam von: ",
+        "message": "Spam von",
         "description": "Ergänzung der Betreff-Zeile als Hinweis auf die Herkunft des Spams"
     },
     "background.subject.selected": {
@@ -174,5 +178,41 @@
     "options.menu5.customEmailHelp": {
         "message": "Beispiel: abuse@email1.com,abuse@email2.com",
         "description": "Beispiel für benutzerdefinierte Melde-Adresse(n)"
+    },
+    "options.menu6.title": {
+        "message": "Benutzerdefinierte Nachricht",
+        "description": "Title for custom message tab"
+    },
+    "options.menu6.description": {
+        "message": "Geben Sie einen benutzerdefinierten Titel und Text für die Missbrauchsmeldung an.",
+        "description": "Description for custom message tab"
+    },
+    "options.menu6.label1": {
+        "message": "Nachrichtenquelle:",
+        "description": "Label for message source selection"
+    },
+    "options.menu6.label2": {
+        "message": "Benutzerdefinierter Titel:",
+        "description": "Label for custom title input"
+    },
+    "options.menu6.label3": {
+        "message": "Benutzerdefinierter Text:",
+        "description": "Label for custom body input"
+    },
+    "options.menu6.source.locales": {
+        "message": "Lokalisierungen",
+        "description": "Option for locales message source"
+    },
+    "options.menu6.locales": {
+        "message": "Lokalisierungen",
+        "description": "Locales option"
+    },
+    "options.menu6.english": {
+        "message": "Englisch",
+        "description": "English option"
+    },
+    "options.menu6.custom": {
+        "message": "Benutzerdefiniert",
+        "description": "Custom option"
     }
 }
