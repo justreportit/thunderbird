@@ -83,6 +83,14 @@
         "message": "Mova-o para o lixo",
         "description": "default action 3"
     },
+    "options.menu1.title4": {
+        "message": "Extensão do arquivo",
+        "description": "Title for file extension selection"
+    },
+    "options.menu1.description4": {
+        "message": "Selecione a extensão do arquivo a ser usada para o anexo ao relatar spam.",
+        "description": "Description for file extension selection"
+    },
     "options.menu2.title": {
         "message": "Seleção de URL WHOIS",
         "description": "whois selection title"

@@ -83,6 +83,14 @@
         "message": "Mutați-l în coșul de gunoi",
         "description": "default action 3"
     },
+    "options.menu1.title4": {
+        "message": "Extensie fișier",
+        "description": "Title for file extension selection"
+    },
+    "options.menu1.description4": {
+        "message": "Selectați extensia de fișier pentru atașament atunci când raportați spam.",
+        "description": "Description for file extension selection"
+    },
     "options.menu2.title": {
         "message": "Selecția URL WHOIS",
         "description": "whois selection title"

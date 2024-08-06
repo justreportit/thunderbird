@@ -83,6 +83,14 @@
         "message": "In den Papierkorb verschieben",
         "description": "Die Nachricht wird in den Papierkorb verschoben"
     },
+    "options.menu1.title4": {
+        "message": "Dateierweiterung",
+        "description": "Title for file extension selection"
+    },
+    "options.menu1.description4": {
+        "message": "Wählen Sie die Dateierweiterung für den Anhang bei der Spam-Meldung.",
+        "description": "Description for file extension selection"
+    },
     "options.menu2.title": {
         "message": "Auswahl der Whois-URL",
         "description": "Überschrift für die Auswahl der Whois-URL"

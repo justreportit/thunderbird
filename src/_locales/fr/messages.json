@@ -83,6 +83,14 @@
         "message": "Déplace-le dans la corbeille",
         "description": "default action 3"
     },
+    "options.menu1.title4": {
+        "message": "Extension de fichier",
+        "description": "Title for file extension selection"
+    },
+    "options.menu1.description4": {
+        "message": "Sélectionnez l'extension de fichier à utiliser pour la pièce jointe lors du signalement de spam.",
+        "description": "Description for file extension selection"
+    },
     "options.menu2.title": {
         "message": "Sélection d'URL WHOIS",
         "description": "whois selection title"

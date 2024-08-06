@@ -83,6 +83,14 @@
         "message": "ゴミ箱に移動します",
         "description": "default action 3"
     },
+    "options.menu1.title4": {
+        "message": "ファイル拡張子",
+        "description": "Title for file extension selection"
+    },
+    "options.menu1.description4": {
+        "message": "スパム報告時の添付ファイルに使用するファイル拡張子を選択してください。",
+        "description": "Description for file extension selection"
+    },
     "options.menu2.title": {
         "message": "WHOIS-URLの選択",
         "description": "whois selection title"

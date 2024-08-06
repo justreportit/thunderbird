@@ -83,6 +83,14 @@
         "message": "Moverlo a la papelera",
         "description": "default action 3"
     },
+    "options.menu1.title4": {
+        "message": "Extensión de archivo",
+        "description": "Title for file extension selection"
+    },
+    "options.menu1.description4": {
+        "message": "Seleccione la extensión de archivo para usar en el adjunto al reportar spam.",
+        "description": "Description for file extension selection"
+    },
     "options.menu2.title": {
         "message": "Selección de URL de WHOIS",
         "description": "whois selection title"

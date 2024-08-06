@@ -17,6 +17,8 @@ $("#menu1 #title2").html(browser.i18n.getMessage("options.menu1.title2"));
 $("#menu1 #description2").html(browser.i18n.getMessage("options.menu1.description2") + "&emsp;&emsp;&emsp;");
 $("#menu1 #title3").html(browser.i18n.getMessage("options.menu1.title3"));
 $("#menu1 #description3").html(browser.i18n.getMessage("options.menu1.description3") + "&emsp;&emsp;&emsp;");
+$("#menu1 #title4").html(browser.i18n.getMessage("options.menu1.title4"));
+$("#menu1 #description4").html(browser.i18n.getMessage("options.menu1.description4") + "&emsp;&emsp;&emsp;");
 $("#menu1 #leave").html(browser.i18n.getMessage("options.menu1.leave"));
 $("#menu1 #delete").html(browser.i18n.getMessage("options.menu1.delete"));
 $("#menu1 #move").html(browser.i18n.getMessage("options.menu1.move"));
@@ -80,6 +82,13 @@ $("#menu1 input[name=trim]").on("click", function(){
   else
     browser.storage.local.set({"trim":false});
 });
+
+$("#menu1 input[name=extension]").on("click", function(){
+  $('#alertSuccess').show();
+  var extension = $("#" + this.id)[0].id;
+  browser.storage.local.set({"extension":extension});
+});
+
 
 $("#menu2 input").on("click", function(){
   $('#alertSuccess2').show();
@@ -195,6 +204,16 @@ $(document).ready(function(){
       $("#leave").prop("checked", false);
       $("#delete").prop("checked", false);
       $("#move").prop("checked", true);
+    }
+  });
+  browser.storage.local.get("extension").then((item) => {
+    if (item.extension == "eml"){
+      $("#eml").prop("checked", true);
+      $("#txt").prop("checked", false);
+    }
+    else {
+      $("#eml").prop("checked", false);
+      $("#txt").prop("checked", true);
     }
   });
   browser.storage.local.get("whois").then((item) => {
