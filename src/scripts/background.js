@@ -12,21 +12,20 @@ browser.storage.local.get("messageSource").then((item) => {if (Object.entries(it
 browser.storage.local.get("customTitle").then((item) => {if (Object.entries(item).length==0){browser.storage.local.set({"customTitle":""})}})
 browser.storage.local.get("customBody").then((item) => {if (Object.entries(item).length==0){browser.storage.local.set({"customBody":""})}})
 
-
-
 browser.messageDisplayAction.onClicked.addListener((tab) =>{
   browser.messageDisplay.getDisplayedMessage(tab.id).then((message) => {
     browser.messages.getFull(message.id).then((parsed) => {
       browser.messages.getRaw(message.id).then((raw) => {
-        browser.storage.local.get("mode").then((configuration) => {
+        getStorageValue("mode").then((mode) => {
+          var configuration = { mode: mode };
           var sender = parsed.headers['return-path'][0] || message.author;
           var spamDomain = extractSpamDomain(sender);
           var to = [];
           if (configuration.mode == "registrar" || configuration.mode == "all"){
             getAbuseEmail(spamDomain).then((x) => x().then((y) => y().then((response) => {
               if (configuration.mode == "all"){
-                getSpamcopEmail().then((email) => {
-                  getCustomEmail().then((custom) => {
+                getStorageValue("spamcop").then((email) => {
+                  getStorageValue("custom").then((custom) => {
                     to.push.apply(to, custom);
                     to.push(email);
                     if (response.status == "success") {
@@ -53,8 +52,8 @@ browser.messageDisplayAction.onClicked.addListener((tab) =>{
             })));
           }
           else if (configuration.mode == "spamcop_and_custom") {
-            getSpamcopEmail().then((email) => {
-              getCustomEmail().then((custom) => {
+            getStorageValue("spamcop").then((email) => {
+              getStorageValue("custom").then((custom) => {
                 to.push.apply(to, custom);
                 to.push(email);
                 composeEmailBasic(to, spamDomain, raw, message).then(() => {
@@ -64,11 +63,11 @@ browser.messageDisplayAction.onClicked.addListener((tab) =>{
             });
           }
           else if (configuration.mode == "custom")
-            getCustomEmail().then((custom) => {
+            getStorageValue("custom").then((custom) => {
               composeEmailBasic(custom, spamDomain, raw, message);
             });
           else
-            getSpamcopEmail().then((email) => {
+            getStorageValue("spamcop").then((email) => {
               to.push(email);
               composeEmailBasic(to, spamDomain, raw, message);
             });
@@ -92,13 +91,13 @@ browser.menus.onClicked.addListener((info, tab) => {
 
 function processSelectedMessage(files, messages, index){
   if (index == messages.length) {
-    browser.storage.local.get("mode").then((configuration) => {
-      if (configuration.mode == "custom")
-        getCustomEmail().then((custom) => {
+    getStorageValue("mode").then((mode) => {
+      if (mode == "custom")
+        getStorageValue("custom").then((custom) => {
           composeEmailSelected(custom, files, messages[0]);
         });
       else
-        getSpamcopEmail().then((email) => {
+        getStorageValue("spamcop").then((email) => {
           composeEmailSelected([email], files, messages[0]);
         });
     });
@@ -123,15 +122,15 @@ function convertRawToUint8Array(raw) {
 }
 
 async function getTrimmedFile(tmpFile) {
-  let item = await browser.storage.local.get("trim")
-  let extensionSetting = await browser.storage.local.get("extension")
+  let trim = await getStorageValue("trim");
+  let extension = await getStorageValue("extension");
 
-  let extension = extensionSetting.extension || 'eml';
+  extension = extension || 'eml';
   let fileName = `message.${extension}`;
 
   let blob = new Blob([tmpFile], { type: 'message/rfc822' });
 
-  if (item.trim) {
+  if (trim) {
     blob = blob.slice(0, 50 * 1024);
   }
 
@@ -140,35 +139,22 @@ async function getTrimmedFile(tmpFile) {
 
 
 async function performAction(messageId){
-  browser.storage.local.get("action").then((item) => {
+  getStorageValue("action").then((action) => {
     // Mark all messages as junk
     browser.messages.update(messageId, {
       "junk": true
     });
-    if (item.action == "move"){
+    if (action == "move"){
       browser.messages.delete([messageId], false);
     }
-    else if (item.action == "delete") {
+    else if (action == "delete") {
       browser.messages.delete([messageId], true);
     }
   });
 }
 
-function getSpamcopEmail(){
-  return browser.storage.local.get("spamcop").then((item) => {
-      return item.spamcop;
-  });
-}
-
-function getCustomEmail(){
-  return browser.storage.local.get("custom").then((item) => {
-      return item.custom;
-  });
-}
-
-
 async function getMessageContent() {
-  let { messageSource } = await browser.storage.local.get("messageSource");
+  let messageSource = await getStorageValue("messageSource");
 
   if (messageSource === "locales") {
     return {
@@ -181,7 +167,8 @@ async function getMessageContent() {
       body: "The attached message was marked as spam as it is sending unsolicited emails. Please take appropriate action.\n\n--"
     };
   } else if (messageSource === "custom") {
-    let { customTitle, customBody } = await browser.storage.local.get(["customTitle", "customBody"]);
+    let customTitle = await getStorageValue("customTitle");
+    let customBody = await getStorageValue("customBody");
     return {
       subject: customTitle,
       body: customBody
@@ -230,8 +217,8 @@ async function composeEmailSelected(to, files, message) {
 }
 
 function createPopup(domain){
-  return browser.storage.local.get("whois").then((item) => async function(){
-    if (item.whois != "") {
+  return getStorageValue("whois").then((whois) => async function(){
+    if (whois != "") {
       var window = await messenger.windows.create({
         url: item.whois + domain,
         type: "popup"
@@ -255,12 +242,12 @@ function extractSpamDomain(author){
 }
 
 function getAbuseEmail(domain){
-  return browser.storage.local.get("server").then((server) => async function(){
-    return await browser.storage.local.get("api-key").then((key) => async function(){
-      var url = server["server"] + domain;
+  return getStorageValue("server").then((server) => async function(){
+    return await getStorageValue("api-key").then((key) => async function(){
+      var url = server + domain;
       var headers = {
         "Content-Type": "application/json",
-        "x-api-key": key["api-key"]
+        "x-api-key": key
       }
       var fetchInfo = {
           mode: "cors",
@@ -280,4 +267,17 @@ async function getIdentity(message) {
     return null;
   }
   return account.identities[0];
+}
+
+async function getStorageValue(key) {
+  try {
+    const managed = await browser.storage.managed.get(key);
+    if (managed && managed[key] !== undefined) {
+      return managed[key];
+    }
+  } catch (e) {
+    // Managed storage not available or no policy set
+  }
+  const local = await browser.storage.local.get(key);
+  return local[key];
 }

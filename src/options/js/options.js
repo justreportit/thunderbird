@@ -1,3 +1,21 @@
+// Helper to check if a setting is managed by enterprise policy
+async function isManaged(key) {
+  try {
+    const managed = await browser.storage.managed.get(key);
+    return managed && managed[key] !== undefined;
+  } catch (e) {
+    return false;
+  }
+}
+
+// Helper to disable and mark UI elements as managed
+function markAsManaged(selector, labelText) {
+  $(selector).prop('disabled', true).addClass('managed-setting');
+  $(selector).closest('.form-check, .form-group').append(
+    '<span class="managed-badge">Enterprise Managed</span>'
+  );
+}
+
 // Locales setup
 $("#tab1").html(browser.i18n.getMessage("general.tab.1"));
 $("#tab2").html(browser.i18n.getMessage("general.tab.2"));
@@ -179,13 +197,42 @@ $("#menu6 #submit").on("click", function(){
   }
 });
 
-$(document).ready(function(){
+$(document).ready(async function(){
   $('#alertSuccess').hide();
   $('#alertSuccess2').hide();
   $('#alertSuccess3').hide();
   $('#alertSuccess4').hide();
   $('#alertSuccess5').hide();
   $('#alertSuccess6').hide();
+
+  // Check for managed settings and disable UI
+  if (await isManaged("mode")) {
+    markAsManaged("#menu1 input[name=mode]", "Configuration Mode");
+  }
+  if (await isManaged("action")) {
+    markAsManaged("#menu1 input[name=action]", "Default Action");
+  }
+  if (await isManaged("trim")) {
+    markAsManaged("#menu1 input[name=trim]", "Trim file");
+  }
+  if (await isManaged("extension")) {
+    markAsManaged("#menu1 input[name=extension]", "File Extension");
+  }
+  if (await isManaged("whois")) {
+    markAsManaged("#menu2 input[name=whois]", "WHOIS URL");
+  }
+  if (await isManaged("server") || await isManaged("api-key")) {
+    markAsManaged("#menu3 #serverURL, #menu3 #apiKey, #menu3 #submit, #menu3 #reset", "Lookup Server");
+  }
+  if (await isManaged("spamcop")) {
+    markAsManaged("#menu4 #spamcopID, #menu4 #quick, #menu4 #submit", "SpamCop Configuration");
+  }
+  if (await isManaged("custom")) {
+    markAsManaged("#menu5 #customEmail, #menu5 #submit", "Custom Report Address");
+  }
+  if (await isManaged("messageSource") || await isManaged("customTitle") || await isManaged("customBody")) {
+    markAsManaged("#menu6 #messageSource, #menu6 #customTitle, #menu6 #customBody, #menu6 #submit", "Custom Message");
+  }
 
   browser.storage.local.get("mode").then((item) => {
     if (item.mode == "registrar"){
