@@ -21,7 +21,7 @@ On Windows, create a directory called 'distribution' where Thunderbird's EXE fil
   "policies": {
     "3rdparty": {
       "Extensions": {
-        "justreportit@thunderbird.net": {
+        "admin@justreport.it": {
           "mode": "registrar",
           "action": "move",
           "trim": true,

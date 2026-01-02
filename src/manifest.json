@@ -7,7 +7,7 @@
     "author": "Nicolas Provencher",
     "browser_specific_settings": {
         "gecko": {
-            "id": "justreportit@thunderbird.net",
+            "id": "admin@justreport.it",
             "strict_min_version": "122.0"
         }
     },
